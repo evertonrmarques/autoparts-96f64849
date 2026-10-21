@@ -98,7 +98,7 @@ function Index() {
       <header className="absolute inset-x-0 top-0 z-40 border-b border-white/20 bg-gradient-to-b from-black/35 via-black/10 to-transparent text-white backdrop-blur-[2px]">
         <div className="mx-auto max-w-[1320px] px-4 md:px-8">
           <div className="flex min-h-[68px] items-center gap-4">
-            <button className="p-2 lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu">
+            <button className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-colors hover:bg-white/10 lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu" aria-expanded={menuOpen}>
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
             <a href="#top" className="relative flex h-16 w-28 items-center overflow-hidden lg:h-20 lg:w-40">
@@ -114,9 +114,9 @@ function Index() {
             </nav>
           </div>
           {menuOpen && (
-            <nav className="flex flex-col bg-navy pb-4 lg:hidden">
+            <nav className="flex flex-col gap-1 rounded-xl border border-white/10 bg-navy/95 p-2 pb-3 shadow-xl backdrop-blur-xl lg:hidden">
               {nav.map(([h, l]) => (
-                <a key={h} href={h} onClick={() => setMenuOpen(false)} className="px-4 py-3 text-sm font-semibold hover:bg-white/10">{l}</a>
+                <a key={h} href={h} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-lg px-4 py-3 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white">{l}</a>
               ))}
             </nav>
           )}
@@ -124,14 +124,14 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[calc(100svh-72px)] overflow-hidden md:min-h-[600px] lg:min-h-[680px]">
+      <section className="relative min-h-[100svh] overflow-hidden md:min-h-[600px] lg:min-h-[680px]">
         <div className="absolute inset-0 bg-navy" />
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-navy/70 to-brand/50" />
-        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-72px)] w-full max-w-6xl items-center px-5 pb-12 pt-28 md:min-h-[600px] md:px-10 lg:min-h-[680px]">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl items-center px-5 pb-8 pt-24 sm:pb-10 sm:pt-28 md:min-h-[600px] md:px-10 md:pb-12 lg:min-h-[680px]">
           <div className="max-w-2xl">
             <p className="mb-3 text-sm font-semibold text-white/90 md:text-base">Distribuidora de peças Hyundai • +20 mil peças em estoque</p>
-            <h1 className="mb-4 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
+            <h1 className="mb-4 text-balance text-[2rem] font-bold leading-[1.12] text-white sm:text-4xl md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
             <p className="mb-5 max-w-xl text-base leading-relaxed text-white/90 md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
             <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 bg-whatsapp px-5 py-3 text-sm font-bold text-white shadow-lg transition-colors hover:bg-whatsapp-hover md:text-base">
               <MessageCircle className="h-5 w-5" /> Pedir orçamento no WhatsApp
@@ -142,9 +142,9 @@ function Index() {
               ))}
             </div>
             <p className="mb-2 mt-5 text-sm font-semibold text-white">Escolha seu modelo:</p>
-            <div className="flex max-w-xl flex-wrap gap-2">
+            <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
               {heroModels.map((m) => (
-                <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/50 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/20">{m}</a>
+                <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1.5 text-[11px] font-medium text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:text-xs">{m}</a>
               ))}
             </div>
           </div>
@@ -152,22 +152,22 @@ function Index() {
       </section>
 
       {/* Catalog */}
-      <section id="catalog" className="bg-muted py-12 md:py-20">
+      <section id="catalog" className="bg-muted py-8 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center md:mb-16">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Catálogo de Peças Hyundai</h2>
-            <p className="mx-auto max-w-2xl px-2 text-lg text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
+          <div className="mb-8 text-center md:mb-16">
+            <h2 className="mb-3 text-2xl font-bold tracking-tight md:mb-4 md:text-4xl">Catálogo de Peças Hyundai</h2>
+            <p className="mx-auto max-w-2xl px-2 text-base leading-relaxed text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
           </div>
-          <div className="mb-12 grid grid-cols-1 gap-4 md:mb-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <div className="mb-9 grid grid-cols-1 gap-3 sm:gap-4 md:mb-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {categories.map(({ name, icon: Icon, description, items }) => (
-              <div key={name} className="flex h-full flex-col gap-4 border border-l-4 border-l-brand bg-card py-6 shadow-sm transition-shadow hover:shadow-lg">
-                <div className="flex items-center gap-3 px-6 text-lg font-semibold md:text-xl">
+              <div key={name} className="flex h-full flex-col gap-3 rounded-xl border border-l-2 border-l-brand bg-card py-5 transition-colors hover:border-brand/60 sm:gap-4 md:rounded-none md:border-l-4 md:py-6 md:shadow-sm md:hover:shadow-lg">
+                <div className="flex items-center gap-3 px-5 text-base font-semibold leading-snug md:px-6 md:text-xl">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-brand-soft text-brand"><Icon className="h-5 w-5" /></span>
                   {name}
                 </div>
-                <p className="px-6 text-sm leading-relaxed text-muted-foreground">{description}</p>
-                <div className="px-6">
-                  <h3 className="mb-3 text-sm font-semibold text-foreground">Principais componentes</h3>
+                <p className="px-5 text-sm leading-relaxed text-muted-foreground md:px-6">{description}</p>
+                <div className="px-5 md:px-6">
+                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground/90 md:text-sm">Principais componentes</h3>
                   <ul className="grid grid-cols-1 gap-x-3 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2">
                     {items.map((item) => (
                       <li key={item} className="flex items-start gap-2">
@@ -177,8 +177,8 @@ function Index() {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-auto px-6 pt-2">
-                  <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center bg-brand px-4 py-2.5 text-sm font-medium text-white hover:bg-navy">
+                <div className="mt-auto px-5 pt-2 md:px-6">
+                  <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:rounded-none md:py-2.5 md:font-medium">
                     Consultar no WhatsApp <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
@@ -186,11 +186,11 @@ function Index() {
             ))}
           </div>
           <div className="mx-auto max-w-4xl text-center">
-            <h3 className="mb-4 text-xl font-bold md:text-2xl">Atendemos os principais modelos Hyundai</h3>
+            <h3 className="mb-3 text-lg font-bold md:mb-4 md:text-2xl">Atendemos os principais modelos Hyundai</h3>
             <p className="mb-6 px-2 text-sm text-muted-foreground md:text-base">Peças originais e compatíveis para toda a linha Hyundai e demais modelos da marca.</p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
               {allModels.map((m) => (
-                <span key={m} className="border border-brand bg-brand-soft px-3 py-1.5 text-sm font-medium text-brand md:px-4 md:py-2 md:text-base">{m}</span>
+                <span key={m} className="rounded-full border border-brand/50 bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand md:rounded-none md:px-4 md:py-2 md:text-base">{m}</span>
               ))}
             </div>
           </div>
@@ -198,10 +198,10 @@ function Index() {
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="bg-background py-10 md:py-16">
+      <section id="gallery" className="bg-background py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-10 text-center text-3xl font-bold md:mb-14 md:text-4xl">Galeria de peças</h2>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+          <h2 className="mb-6 text-center text-2xl font-bold tracking-tight md:mb-14 md:text-4xl">Galeria de peças</h2>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
             <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border border-border bg-card p-2 shadow-md">
               <img src={categorias} alt="Categorias de peças automotivas: Amortecedores, Acessórios, Freios, Embreagens, Radiadores, Suspensão, Correias, Direção, Elétricas, Bateria" className="h-full w-full object-contain" loading="lazy" />
             </div>
@@ -209,8 +209,8 @@ function Index() {
               <img src={workbench} alt="Peça automotiva Hyundai segurada em frente ao estoque de peças genuínas" className="h-full w-full object-cover" loading="lazy" />
             </div>
           </div>
-          <div className="mx-auto mt-8 max-w-5xl md:mt-12">
-            <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+          <div className="mx-auto mt-6 max-w-5xl md:mt-12">
+            <div className="mb-4 grid grid-cols-1 gap-3 md:mb-6 md:grid-cols-3 md:gap-6">
               <Stat><div className="mb-2 text-3xl font-bold text-brand md:text-4xl">+20mil</div><p className="text-sm md:text-base">Peças em estoque</p></Stat>
               <Stat><div className="mb-2 text-3xl font-bold text-brand md:text-4xl">Garantia</div><p className="text-sm md:text-base">Peças com nota fiscal e garantia</p></Stat>
               <Stat><p className="text-lg font-bold md:text-xl">Envio para todo o Brasil<br />Postagem rápida e segura</p></Stat>
@@ -243,11 +243,11 @@ function Index() {
       </section>
 
       {/* About */}
-      <section id="about" className="bg-background py-12 md:py-20">
+      <section id="about" className="bg-background py-8 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-6 text-3xl font-bold md:mb-8 md:text-4xl">Sobre Nós</h2>
-            <div className="space-y-4 px-2 text-base leading-relaxed text-muted-foreground md:space-y-6 md:text-lg">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight md:mb-8 md:text-4xl">Sobre Nós</h2>
+            <div className="space-y-4 px-1 text-sm leading-relaxed text-muted-foreground md:space-y-6 md:px-2 md:text-lg">
               <p>A <strong className="text-navy">Solução Auto Parts</strong> é especializada na comercialização de peças automotivas para veículos <strong className="text-navy">Hyundai</strong>, oferecendo produtos originais, genuínos e de primeira linha.</p>
               <p>Trabalhamos com fornecedores especializados, ampla variedade de componentes e atendimento personalizado para ajudar cada cliente a encontrar a peça correta para seu veículo.</p>
               <p>Atendemos clientes de todo o Brasil, com foco em qualidade, segurança, agilidade no envio e suporte durante toda a compra.</p>
@@ -257,11 +257,11 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-muted py-12 md:py-20">
+      <section id="testimonials" className="bg-muted py-8 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center md:mb-16">
-            <h2 className="mb-3 text-balance text-3xl font-bold text-navy sm:text-4xl md:mb-4 md:text-5xl">O que nossos clientes dizem</h2>
-            <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">Avaliações reais de clientes que compraram e receberam nossas peças.</p>
+            <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-navy sm:text-4xl md:mb-4 md:text-5xl">O que nossos clientes dizem</h2>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">Avaliações reais de clientes que compraram e receberam nossas peças.</p>
           </div>
           <div className="mx-auto max-w-2xl">
             <div className="overflow-hidden border border-border bg-card shadow-lg">
@@ -354,7 +354,7 @@ function Index() {
       </footer>
 
       {/* Floating WhatsApp */}
-      <a href={QUOTE} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-transform hover:scale-110 hover:bg-whatsapp-hover md:h-16 md:w-16">
+      <a href={QUOTE} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-transform hover:scale-110 hover:bg-whatsapp-hover md:bottom-5 md:right-5 md:h-16 md:w-16">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-7 w-7 md:h-8 md:w-8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-1.958-.173-.221-.018-.341.13-.45.134-.11.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
       </a>
     </div>
