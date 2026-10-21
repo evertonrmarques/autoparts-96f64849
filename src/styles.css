@@ -217,10 +217,31 @@
   }
 
   header {
-    border-bottom-color: oklch(1 0 0 / 9%);
-    background-color: oklch(0.135 0.018 260 / 94%);
+    border-bottom-color: oklch(1 0 0 / 8%);
+    background: oklch(0.12 0.018 260 / 97%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+  }
+
+  .mobile-nav-panel {
+    background: oklch(0.145 0.018 260 / 98%);
+    border: 1px solid oklch(1 0 0 / 9%);
+    box-shadow: 0 20px 50px oklch(0 0 0 / 42%), 0 4px 14px oklch(0 0 0 / 24%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .mobile-nav-panel a:not(:last-child) {
+    border-bottom-color: oklch(1 0 0 / 5%);
+  }
+
+  .mobile-nav-panel a:hover {
+    background: oklch(0.22 0.03 250 / 76%);
+  }
+
+  .mobile-nav-panel a:focus-visible {
+    outline: 2px solid oklch(0.7 0.12 248);
+    outline-offset: -2px;
   }
 
   #catalog .border-l-2 {
