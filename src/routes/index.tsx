@@ -96,9 +96,9 @@ function Index() {
     <div id="top" className="min-h-screen bg-background font-sans text-navy">
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-40 border-b border-white/20 bg-gradient-to-b from-black/35 via-black/10 to-transparent text-white backdrop-blur-[2px]">
-        <div className="mx-auto max-w-[1320px] px-4 md:px-8">
+        <div className="relative mx-auto max-w-[1320px] px-4 md:px-8">
           <div className="flex min-h-[68px] items-center gap-4">
-            <button className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-colors hover:bg-white/10 lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu" aria-expanded={menuOpen}>
+            <button className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] p-2 transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-navigation" aria-expanded={menuOpen}>
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
             <a href="#top" className="relative flex h-16 w-28 items-center overflow-hidden lg:h-20 lg:w-40">
@@ -114,9 +114,9 @@ function Index() {
             </nav>
           </div>
           {menuOpen && (
-            <nav className="flex flex-col gap-1 rounded-xl border border-white/10 bg-navy/95 p-2 pb-3 shadow-xl backdrop-blur-xl lg:hidden">
+            <nav id="mobile-navigation" aria-label="Navegação principal" className="mobile-nav-panel absolute left-0 right-0 top-[calc(100%-0.25rem)] z-50 flex flex-col overflow-hidden rounded-xl p-1.5 lg:hidden">
               {nav.map(([h, l]) => (
-                <a key={h} href={h} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-lg px-4 py-3 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white">{l}</a>
+                <a key={h} href={h} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-lg border-b border-white/[0.05] px-4 py-3 text-sm font-medium text-white/85 transition-colors hover:bg-white/[0.06] hover:text-white focus-visible:bg-white/[0.08] focus-visible:outline-none">{l}</a>
               ))}
             </nav>
           )}
