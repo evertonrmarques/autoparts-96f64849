@@ -130,21 +130,21 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy/70 to-brand/50" />
         <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl items-center px-5 pb-8 pt-24 sm:pb-10 sm:pt-28 md:min-h-[600px] md:px-10 md:pb-12 lg:min-h-[680px]">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm font-semibold text-white/90 md:text-base">Distribuidora de peças Hyundai • +20 mil peças em estoque</p>
-            <h1 className="mb-4 text-balance text-[2rem] font-bold leading-[1.12] text-white sm:text-4xl md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
-            <p className="mb-5 max-w-xl text-base leading-relaxed text-white/90 md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
+            <p className="mb-3 max-w-xl text-xs font-semibold leading-[1.45] tracking-[-0.01em] text-white/90 sm:text-sm md:text-base">Distribuidora de peças Hyundai • +20 mil peças em estoque</p>
+            <h1 className="mb-3 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:mb-4 sm:text-4xl sm:tracking-tight md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
+            <p className="mb-4 max-w-xl text-[15px] leading-[1.55] text-white/90 sm:mb-5 sm:text-base sm:leading-relaxed md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
             <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 bg-whatsapp px-5 py-3 text-sm font-bold text-white shadow-lg transition-colors hover:bg-whatsapp-hover md:text-base">
               <MessageCircle className="h-5 w-5" /> Pedir orçamento no WhatsApp
             </a>
-            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium text-white/90 md:text-sm">
+            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5 text-[11px] font-medium leading-5 text-white/90 sm:mt-4 sm:gap-x-4 sm:gap-y-2 sm:text-xs md:text-sm">
               {["Nota fiscal", "Garantia", "Envio rápido e seguro"].map((s) => (
-                <span key={s} className="inline-flex items-center gap-1"><Check className="h-4 w-4 text-whatsapp" />{s}</span>
+                <span key={s} className="inline-flex items-center gap-1"><Check className="h-3.5 w-3.5 flex-shrink-0 text-whatsapp sm:h-4 sm:w-4" />{s}</span>
               ))}
             </div>
-            <p className="mb-2 mt-5 text-sm font-semibold text-white">Escolha seu modelo:</p>
+            <p className="mb-2 mt-4 text-xs font-semibold leading-5 text-white sm:mt-5 sm:text-sm">Escolha seu modelo:</p>
             <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
               {heroModels.map((m) => (
-                <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1.5 text-[11px] font-medium text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:text-xs">{m}</a>
+                <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium leading-4 text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
               ))}
             </div>
           </div>
