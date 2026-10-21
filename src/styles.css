@@ -152,3 +152,109 @@
   --color-whatsapp: oklch(0.76 0.19 150);
   --color-whatsapp-hover: oklch(0.69 0.18 150);
 }
+
+/* Mobile experience: restrained dark surfaces and readable contrast. */
+@media (max-width: 767px) {
+  :root {
+    color-scheme: dark;
+    --background: oklch(0.135 0.018 260);
+    --foreground: oklch(0.94 0.012 260);
+    --card: oklch(0.185 0.022 260);
+    --card-foreground: oklch(0.94 0.012 260);
+    --popover: oklch(0.185 0.022 260);
+    --popover-foreground: oklch(0.94 0.012 260);
+    --primary: oklch(0.72 0.13 248);
+    --primary-foreground: oklch(0.13 0.018 260);
+    --secondary: oklch(0.23 0.022 260);
+    --secondary-foreground: oklch(0.92 0.012 260);
+    --muted: oklch(0.16 0.02 260);
+    --muted-foreground: oklch(0.72 0.016 260);
+    --accent: oklch(0.24 0.028 260);
+    --accent-foreground: oklch(0.94 0.012 260);
+    --border: oklch(0.29 0.024 260);
+    --input: oklch(0.29 0.024 260);
+    --ring: oklch(0.7 0.12 248);
+    --sidebar: oklch(0.17 0.02 260);
+    --sidebar-foreground: oklch(0.94 0.012 260);
+    --sidebar-primary: oklch(0.72 0.13 248);
+    --sidebar-primary-foreground: oklch(0.13 0.018 260);
+    --sidebar-accent: oklch(0.24 0.028 260);
+    --sidebar-accent-foreground: oklch(0.94 0.012 260);
+    --sidebar-border: oklch(0.29 0.024 260);
+    --sidebar-ring: oklch(0.7 0.12 248);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .text-navy {
+    color: oklch(0.94 0.012 260);
+  }
+
+  .bg-brand-soft {
+    background-color: oklch(0.235 0.035 250);
+  }
+
+  .text-brand {
+    color: oklch(0.78 0.12 248);
+  }
+
+  .border-brand {
+    border-color: oklch(0.43 0.09 248);
+  }
+
+  .bg-brand {
+    background-color: oklch(0.53 0.14 248);
+  }
+
+  header {
+    border-bottom-color: oklch(1 0 0 / 9%);
+    background-color: oklch(0.135 0.018 260 / 94%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  #catalog .border-l-2 {
+    border-left-width: 2px;
+  }
+
+  #catalog .rounded-xl {
+    border-radius: 0.9rem;
+  }
+
+  #catalog a,
+  footer a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #gallery .border {
+    border-radius: 0.9rem;
+  }
+
+  #gallery img,
+  #guarantee img {
+    display: block;
+  }
+
+  #testimonials .bg-brand-soft {
+    border-color: oklch(0.43 0.09 248 / 55%);
+  }
+
+  #contact {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+}
