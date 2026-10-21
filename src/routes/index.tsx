@@ -128,7 +128,7 @@ function Index() {
         <div className="absolute inset-0 bg-navy" />
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-navy/70 to-brand/50" />
-        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl items-center px-5 pb-8 pt-24 sm:pb-10 sm:pt-28 md:min-h-[600px] md:px-10 md:pb-12 lg:min-h-[680px]">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl items-start px-5 pb-8 pt-[6.75rem] sm:pb-10 sm:pt-28 md:min-h-[600px] md:items-center md:px-10 md:pb-12 md:pt-28 lg:min-h-[680px]">
           <div className="max-w-2xl">
             <p className="mb-3 max-w-xl text-xs font-semibold leading-[1.45] tracking-[-0.01em] text-white/90 sm:text-sm md:text-base">Distribuidora de peças Hyundai • +20 mil peças em estoque</p>
             <h1 className="mb-3 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:mb-4 sm:text-4xl sm:tracking-tight md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
@@ -146,6 +146,26 @@ function Index() {
               {heroModels.map((m) => (
                 <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium leading-4 text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
               ))}
+            </div>
+            <div className="mt-4 w-full max-w-xl md:hidden">
+              <a href="#gallery" className="mb-2 flex items-center justify-between gap-3 text-xs font-semibold text-white/95">
+                <span>Galeria de peças</span>
+                <span className="inline-flex items-center gap-1 text-white/70">Ver galeria <ArrowRight className="h-3.5 w-3.5" /></span>
+              </a>
+              <div className="grid grid-cols-2 gap-2">
+                <a href="#gallery" className="overflow-hidden rounded-lg border border-white/15 bg-slate-950/30 transition-colors hover:border-white/30">
+                  <div className="flex h-[4.25rem] items-center justify-center bg-white/[0.04] p-1.5">
+                    <img src={categorias} alt="Categorias de peças automotivas" className="h-full w-full object-contain" loading="lazy" />
+                  </div>
+                  <p className="px-2 py-1.5 text-[10px] font-medium text-white/85">Categorias</p>
+                </a>
+                <a href="#gallery" className="overflow-hidden rounded-lg border border-white/15 bg-slate-950/30 transition-colors hover:border-white/30">
+                  <div className="h-[4.25rem] overflow-hidden bg-white/[0.04]">
+                    <img src={workbench} alt="Peças automotivas Hyundai" className="h-full w-full object-cover" loading="lazy" />
+                  </div>
+                  <p className="px-2 py-1.5 text-[10px] font-medium text-white/85">Peças em destaque</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
