@@ -217,10 +217,29 @@
   }
 
   header {
-    border-bottom-color: oklch(1 0 0 / 8%);
-    background: oklch(0.12 0.018 260 / 97%);
+    border-bottom-color: oklch(1 0.015 250 / 12%);
+    background: linear-gradient(110deg, oklch(0.205 0.055 255 / 98%), oklch(0.17 0.045 255 / 97%));
+    box-shadow: 0 8px 24px oklch(0.08 0.02 260 / 12%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+  }
+
+  header a[href="#top"] {
+    background: transparent;
+  }
+
+  header .bg-whatsapp {
+    background-color: oklch(0.72 0.19 150);
+    color: white;
+  }
+
+  header .bg-whatsapp:hover {
+    background-color: oklch(0.66 0.18 150);
+  }
+
+  header .bg-whatsapp:focus-visible {
+    outline: 2px solid oklch(0.91 0.08 155);
+    outline-offset: 3px;
   }
 
   .mobile-nav-panel {
