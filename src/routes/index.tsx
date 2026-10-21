@@ -39,12 +39,42 @@ const nav = [
 const heroModels = ["HB20", "HB20S", "HB20X", "Creta", "Tucson", "ix35", "Santa Fe", "i30", "Azera", "HR"];
 const allModels = ["HB20", "HB20S", "HB20X", "Creta", "Tucson", "ix35", "Santa Fe", "Grand Santa Fe", "Azera", "i30", "Elantra", "Sonata", "Veloster", "HR", "Atos"];
 const categories = [
-  { name: "Motor e Componentes", icon: Cog },
-  { name: "Sistema de Freios", icon: Disc3 },
-  { name: "Suspensão e Direção", icon: GitMerge },
-  { name: "Carroceria e Acessórios", icon: Car },
-  { name: "Elétrica e Iluminação", icon: Zap },
-  { name: "Arrefecimento e Climatização", icon: Thermometer },
+  {
+    name: "Motor e Componentes",
+    icon: Cog,
+    description: "Peças essenciais para o funcionamento, a vedação e o desempenho do motor.",
+    items: ["Bloco e cabeçote", "Pistões e anéis", "Bielas e virabrequim", "Comando de válvulas", "Juntas e retentores", "Correias e tensores", "Coxins do motor"],
+  },
+  {
+    name: "Sistema de Freios",
+    icon: Disc3,
+    description: "Componentes para frenagem segura e controle adequado do veículo.",
+    items: ["Pastilhas de freio", "Discos e tambores", "Pinças de freio", "Cilindros de roda", "Cilindro mestre", "Flexíveis e mangueiras", "Sensores do ABS"],
+  },
+  {
+    name: "Suspensão e Direção",
+    icon: GitMerge,
+    description: "Peças que ajudam na estabilidade, no conforto e na precisão da direção.",
+    items: ["Amortecedores", "Molas", "Bandejas e buchas", "Pivôs e bieletas", "Terminais de direção", "Barras axiais", "Caixa de direção"],
+  },
+  {
+    name: "Carroceria e Acessórios",
+    icon: Car,
+    description: "Peças externas e acabamentos para reposição e reparo da carroceria.",
+    items: ["Para-choques", "Capô e para-lamas", "Portas e dobradiças", "Retrovisores", "Grades dianteiras", "Maçanetas", "Frisos e acabamentos"],
+  },
+  {
+    name: "Elétrica e Iluminação",
+    icon: Zap,
+    description: "Componentes elétricos e de iluminação para os sistemas do veículo.",
+    items: ["Alternador", "Motor de partida", "Baterias", "Faróis e lanternas", "Fusíveis e relés", "Sensores e interruptores", "Bobinas de ignição"],
+  },
+  {
+    name: "Arrefecimento e Climatização",
+    icon: Thermometer,
+    description: "Peças para controlar a temperatura do motor e o conforto térmico da cabine.",
+    items: ["Radiador", "Eletroventilador", "Bomba d'água", "Válvula termostática", "Reservatório e mangueiras", "Compressor do ar-condicionado", "Condensador e evaporador"],
+  },
 ];
 const reasons = [
   { icon: Shield, title: "Garantia de Qualidade", text: "Todas as peças com garantia e certificação de qualidade" },
@@ -129,13 +159,25 @@ function Index() {
             <p className="mx-auto max-w-2xl px-2 text-lg text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
           </div>
           <div className="mb-12 grid grid-cols-1 gap-4 md:mb-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-            {categories.map(({ name, icon: Icon }) => (
-              <div key={name} className="flex flex-col gap-6 border border-l-4 border-l-brand bg-card py-6 shadow-sm transition-shadow hover:shadow-lg">
+            {categories.map(({ name, icon: Icon, description, items }) => (
+              <div key={name} className="flex h-full flex-col gap-4 border border-l-4 border-l-brand bg-card py-6 shadow-sm transition-shadow hover:shadow-lg">
                 <div className="flex items-center gap-3 px-6 text-lg font-semibold md:text-xl">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-brand-soft text-brand"><Icon className="h-5 w-5" /></span>
                   {name}
                 </div>
+                <p className="px-6 text-sm leading-relaxed text-muted-foreground">{description}</p>
                 <div className="px-6">
+                  <h3 className="mb-3 text-sm font-semibold text-foreground">Principais componentes</h3>
+                  <ul className="grid grid-cols-1 gap-x-3 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2">
+                    {items.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-auto px-6 pt-2">
                   <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center bg-brand px-4 py-2.5 text-sm font-medium text-white hover:bg-navy">
                     Consultar no WhatsApp <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
