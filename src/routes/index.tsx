@@ -4,7 +4,7 @@ import {
   ArrowRight, Award, Car, Check, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Star, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
-import logo from "@/assets/solucao-auto-parts-logo.png";
+import logo from "@/assets/solucao-auto-parts-logo.webp";
 import hero from "@/assets/hero-storefront.jpg";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/assets/hyundai-part-workbench-new.jpg";
@@ -98,8 +98,8 @@ function Index() {
       <header className="absolute inset-x-0 top-0 z-40 border-b border-white/20 bg-gradient-to-b from-black/35 via-black/10 to-transparent text-white backdrop-blur-[2px]">
         <div className="relative mx-auto max-w-[1320px] px-4 md:px-8">
           <div className="flex min-h-[68px] items-center gap-2 sm:gap-4">
-            <a href="#top" className="relative flex h-16 w-28 shrink-0 items-center overflow-hidden lg:h-20 lg:w-40">
-              <img src={logo} alt="Solução Auto Parts Distribuidora" className="absolute left-1/2 top-1/2 h-36 w-36 max-w-none -translate-x-1/2 -translate-y-[45%] object-contain lg:h-44 lg:w-44" />
+            <a href="#top" aria-label="Solução Auto Parts — início" className="relative flex h-16 w-36 shrink-0 items-center overflow-hidden lg:h-20 lg:w-40">
+              <img src={logo} alt="Solução Auto Parts Distribuidora" className="absolute inset-0 h-full w-full object-contain" />
             </a>
             <button className="ml-auto flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] p-2 transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-navigation" aria-expanded={menuOpen}>
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
