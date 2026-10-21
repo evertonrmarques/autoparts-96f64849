@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  ArrowRight, Award, Car, Check, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
+  ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Star, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
@@ -88,6 +88,7 @@ const testimonials = [
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [t, setT] = useState(0);
   const cur = testimonials[t] ?? testimonials[0]!;
   const step = (d: number) => setT((t + d + testimonials.length) % testimonials.length);
@@ -161,7 +162,9 @@ function Index() {
             <p className="mx-auto max-w-2xl px-2 text-base leading-relaxed text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
           </div>
           <div className="mb-9 grid grid-cols-1 gap-3 sm:gap-4 md:mb-12 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
-            {categories.map(({ name, icon: Icon, description, items }) => (
+            {categories.map(({ name, icon: Icon, description, items }, index) => {
+              const isExpanded = expandedCategories.includes(name);
+              return (
               <div key={name} className="flex h-full flex-col gap-3 rounded-xl border border-l-2 border-l-brand bg-card py-5 transition-colors hover:border-brand/60 sm:gap-4 md:py-6 md:shadow-sm md:hover:shadow-md">
                 <div className="flex items-center gap-3 px-5 text-base font-semibold leading-snug md:px-6 md:text-xl">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-brand-soft text-brand"><Icon className="h-5 w-5" /></span>
@@ -169,15 +172,29 @@ function Index() {
                 </div>
                 <p className="px-5 text-sm leading-relaxed text-muted-foreground md:px-6">{description}</p>
                 <div className="px-5 md:px-6">
-                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground/90 md:text-sm">Principais componentes</h3>
-                  <ul className="grid grid-cols-1 gap-x-3 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2">
-                    {items.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`category-items-${index}`}
+                    onClick={() => setExpandedCategories((current) => isExpanded ? current.filter((category) => category !== name) : [...current, name])}
+                    className="inline-flex min-h-10 w-full items-center justify-between gap-3 rounded-lg border border-border bg-white/[0.02] px-3 py-2 text-left text-sm font-semibold text-foreground transition-colors hover:border-brand/60 hover:bg-brand-soft/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                  >
+                    <span>{isExpanded ? "Ocultar componentes" : "Ver componentes"}</span>
+                    <ChevronDown className={`h-4 w-4 flex-shrink-0 text-brand transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+                  </button>
+                  {isExpanded && (
+                    <div id={`category-items-${index}`} className="pt-4">
+                      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground/90 md:text-sm">Principais componentes</h3>
+                      <ul className="grid grid-cols-1 gap-x-3 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2">
+                        {items.map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-auto px-5 pt-2 md:px-6">
                   <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:py-2.5 md:font-medium">
@@ -185,7 +202,8 @@ function Index() {
                   </a>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
           <div className="mx-auto max-w-4xl text-center">
             <h3 className="mb-3 text-lg font-bold md:mb-4 md:text-2xl">Atendemos os principais modelos Hyundai</h3>
