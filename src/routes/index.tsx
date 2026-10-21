@@ -131,7 +131,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy/70 to-brand/50" />
         <div className="hero-bottom-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[46%]" />
         <div className="relative z-10 mx-auto flex min-h-[88svh] w-full max-w-6xl items-start px-5 pb-8 pt-[6.75rem] sm:pb-10 sm:pt-28 md:min-h-[600px] md:items-center md:px-10 md:pb-12 md:pt-28 lg:min-h-[680px]">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl -translate-y-[10svh] md:translate-y-0">
             <p className="mb-3 max-w-xl text-xs font-semibold leading-[1.45] tracking-[-0.01em] text-white/90 sm:text-sm md:text-base">Distribuidora de peças Hyundai • +20 mil peças em estoque</p>
             <h1 className="mb-3 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:mb-4 sm:text-4xl sm:tracking-tight md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
             <p className="mb-4 max-w-xl text-[15px] leading-[1.55] text-white/90 sm:mb-5 sm:text-base sm:leading-relaxed md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
