@@ -329,6 +329,20 @@ footer {
     outline-offset: -2px;
   }
 
+  /* Pull the catalog upward so its heading begins over the lower hero area. */
+  #catalog {
+    position: relative;
+    z-index: 2;
+    margin-top: -30svh;
+    background: linear-gradient(
+      to bottom,
+      oklch(0.16 0.03 255 / 0) 0,
+      oklch(0.16 0.03 255 / 0.16) 2.5rem,
+      oklch(0.16 0.02 260 / 0.78) 7rem,
+      oklch(0.16 0.02 260 / 1) 11rem
+    );
+  }
+
   #catalog .border-l-2 {
     border-left-width: 2px;
   }
