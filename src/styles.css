@@ -142,3 +142,13 @@
     color: var(--color-foreground);
   }
 }
+
+/* Solução Auto Parts brand tokens */
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: oklch(0.31 0.08 265);
+  --color-brand: oklch(0.49 0.12 248);
+  --color-brand-soft: oklch(0.95 0.015 245);
+  --color-whatsapp: oklch(0.76 0.19 150);
+  --color-whatsapp-hover: oklch(0.69 0.18 150);
+}
