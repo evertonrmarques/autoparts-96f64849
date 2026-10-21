@@ -97,12 +97,15 @@ function Index() {
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-40 border-b border-white/20 bg-gradient-to-b from-black/35 via-black/10 to-transparent text-white backdrop-blur-[2px]">
         <div className="relative mx-auto max-w-[1320px] px-4 md:px-8">
-          <div className="flex min-h-[68px] items-center gap-4">
+          <div className="flex min-h-[68px] items-center gap-2 sm:gap-4">
             <button className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] p-2 transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-navigation" aria-expanded={menuOpen}>
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
-            <a href="#top" className="relative flex h-16 w-28 items-center overflow-hidden lg:h-20 lg:w-40">
+            <a href="#top" className="relative flex h-16 w-28 shrink-0 items-center overflow-hidden lg:h-20 lg:w-40">
               <img src={logo} alt="Solução Auto Parts Distribuidora" className="absolute left-1/2 top-1/2 h-36 w-36 max-w-none -translate-x-1/2 -translate-y-[45%] object-contain lg:h-44 lg:w-44" />
+            </a>
+            <a href={QUOTE} target="_blank" rel="noreferrer" aria-label="Pedir orçamento pelo WhatsApp" className="ml-auto inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-md bg-whatsapp px-2.5 text-xs font-bold text-white shadow-sm transition-colors hover:bg-whatsapp-hover sm:px-3 sm:text-sm lg:hidden">
+              <MessageCircle className="h-4 w-4" /> <span>WhatsApp</span>
             </a>
             <nav className="ml-auto hidden items-center lg:flex">
               {nav.map(([h, l]) => (
