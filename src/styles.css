@@ -258,6 +258,37 @@ footer {
   );
 }
 
+/* Matching dark-blue fades at both edges of the "Why choose us" image. */
+.why-choose-fade {
+  height: clamp(5rem, 12vw, 10rem);
+}
+
+.why-choose-fade-top {
+  background: linear-gradient(
+    to bottom,
+    oklch(0.16 0.02 260) 0%,
+    oklch(0.16 0.03 255 / 0.82) 22%,
+    oklch(0.16 0.03 255 / 0.42) 58%,
+    oklch(0.16 0.03 255 / 0) 100%
+  );
+}
+
+.why-choose-fade-bottom {
+  background: linear-gradient(
+    to top,
+    oklch(0.135 0.018 260) 0%,
+    oklch(0.16 0.02 260 / 0.9) 22%,
+    oklch(0.16 0.03 255 / 0.42) 58%,
+    oklch(0.16 0.03 255 / 0) 100%
+  );
+}
+
+@media (max-width: 767px) {
+  .why-choose-fade {
+    height: 6.5rem;
+  }
+}
+
 /* Mobile experience: restrained dark surfaces and readable contrast. */
 @media (max-width: 767px) {
   :root {
