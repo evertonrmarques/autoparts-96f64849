@@ -152,15 +152,15 @@ function Index() {
       </section>
 
       {/* Catalog */}
-      <section id="catalog" className="bg-muted py-8 md:py-20">
+      <section id="catalog" className="bg-muted py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-8 text-center md:mb-16">
+          <div className="mb-8 text-center md:mb-12">
             <h2 className="mb-3 text-2xl font-bold tracking-tight md:mb-4 md:text-4xl">Catálogo de Peças Hyundai</h2>
             <p className="mx-auto max-w-2xl px-2 text-base leading-relaxed text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
           </div>
-          <div className="mb-9 grid grid-cols-1 gap-3 sm:gap-4 md:mb-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <div className="mb-9 grid grid-cols-1 gap-3 sm:gap-4 md:mb-12 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
             {categories.map(({ name, icon: Icon, description, items }) => (
-              <div key={name} className="flex h-full flex-col gap-3 rounded-xl border border-l-2 border-l-brand bg-card py-5 transition-colors hover:border-brand/60 sm:gap-4 md:rounded-none md:border-l-4 md:py-6 md:shadow-sm md:hover:shadow-lg">
+              <div key={name} className="flex h-full flex-col gap-3 rounded-xl border border-l-2 border-l-brand bg-card py-5 transition-colors hover:border-brand/60 sm:gap-4 md:py-6 md:shadow-sm md:hover:shadow-md">
                 <div className="flex items-center gap-3 px-5 text-base font-semibold leading-snug md:px-6 md:text-xl">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-brand-soft text-brand"><Icon className="h-5 w-5" /></span>
                   {name}
@@ -178,7 +178,7 @@ function Index() {
                   </ul>
                 </div>
                 <div className="mt-auto px-5 pt-2 md:px-6">
-                  <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:rounded-none md:py-2.5 md:font-medium">
+                  <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:py-2.5 md:font-medium">
                     Consultar no WhatsApp <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
@@ -190,7 +190,7 @@ function Index() {
             <p className="mb-6 px-2 text-sm text-muted-foreground md:text-base">Peças originais e compatíveis para toda a linha Hyundai e demais modelos da marca.</p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
               {allModels.map((m) => (
-                <span key={m} className="rounded-full border border-brand/50 bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand md:rounded-none md:px-4 md:py-2 md:text-base">{m}</span>
+                <span key={m} className="rounded-full border border-brand/50 bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand md:px-4 md:py-2 md:text-base">{m}</span>
               ))}
             </div>
           </div>
@@ -243,7 +243,7 @@ function Index() {
       </section>
 
       {/* About */}
-      <section id="about" className="bg-background py-8 md:py-20">
+      <section id="about" className="bg-background py-8 md:py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="mb-4 text-2xl font-bold tracking-tight md:mb-8 md:text-4xl">Sobre Nós</h2>
@@ -257,7 +257,7 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-muted py-8 md:py-20">
+      <section id="testimonials" className="bg-muted py-8 md:py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center md:mb-16">
             <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-navy sm:text-4xl md:mb-4 md:text-5xl">O que nossos clientes dizem</h2>
@@ -300,7 +300,7 @@ function Index() {
       </section>
 
       {/* Why us */}
-      <section className="relative bg-cover bg-center bg-no-repeat py-12 md:py-20" style={{ backgroundImage: `url(${warehouse})` }}>
+      <section className="relative bg-cover bg-center bg-no-repeat py-10 md:py-16" style={{ backgroundImage: `url(${warehouse})` }}>
         <div className="absolute inset-0 bg-navy/85" />
         <div className="container relative mx-auto px-4">
           <div className="mb-12 text-center md:mb-16">
@@ -320,7 +320,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-transparent py-8 text-white md:bg-navy md:py-12">
+      <footer id="contact" className="bg-transparent py-8 text-white md:py-10 lg:py-12">
         <div className="container mx-auto px-4">
           <section className="border-b border-white/15 px-2 pb-8 text-center">
             <h2 className="text-2xl font-bold text-white md:text-3xl">Não achou a peça que procura?</h2>
@@ -362,5 +362,5 @@ function Index() {
 }
 
 function Stat({ children }: { children: React.ReactNode }) {
-  return <div className="border border-l-4 border-border border-l-brand bg-card p-6 shadow-md transition-shadow hover:shadow-lg md:p-8">{children}</div>;
+  return <div className="rounded-xl border border-l-2 border-border border-l-brand bg-card p-5 shadow-sm transition-shadow hover:shadow-md md:p-7">{children}</div>;
 }
