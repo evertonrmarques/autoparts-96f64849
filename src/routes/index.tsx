@@ -60,7 +60,7 @@ const testimonials = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [t, setT] = useState(0);
-  const cur = testimonials[t];
+  const cur = testimonials[t] ?? testimonials[0]!;
   const step = (d: number) => setT((t + d + testimonials.length) % testimonials.length);
 
   return (
