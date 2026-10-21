@@ -320,9 +320,11 @@ function Index() {
       </section>
 
       {/* Why us */}
-      <section className="relative bg-cover bg-center bg-no-repeat py-10 md:py-16" style={{ backgroundImage: `url(${warehouse})` }}>
-        <div className="absolute inset-0 bg-navy/85" />
-        <div className="container relative mx-auto px-4">
+      <section className="why-choose-section relative isolate overflow-hidden bg-cover bg-center bg-no-repeat py-10 md:py-16" style={{ backgroundImage: `url(${warehouse})` }}>
+        <div className="absolute inset-0 z-0 bg-navy/85" />
+        <div aria-hidden="true" className="why-choose-fade why-choose-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" />
+        <div aria-hidden="true" className="why-choose-fade why-choose-fade-bottom pointer-events-none absolute inset-x-0 bottom-0 z-[1]" />
+        <div className="container relative z-10 mx-auto px-4">
           <div className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Por que escolher a Solução Auto Parts?</h2>
             <p className="mx-auto max-w-2xl px-2 text-lg text-white/80 md:text-xl">Confiança, qualidade e compromisso com a excelência no atendimento</p>
