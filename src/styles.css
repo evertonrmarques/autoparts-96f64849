@@ -382,7 +382,7 @@ footer {
   #catalog {
     position: relative;
     z-index: 2;
-    margin-top: -24svh;
+    margin-top: -16svh;
     background: linear-gradient(
       to bottom,
       oklch(0.16 0.03 255 / 0) 0,
