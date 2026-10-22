@@ -10,8 +10,8 @@ import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import delivery from "@/garantia-pecas.jpg.png";
 import warehouse from "@/assets/hyundai-warehouse-new.png";
-import testimonialBox from "@/assets/testimonial-hyundai-box.png";
 import lucas from "@/assets/lucas.png";
+import primeiraPeca from "@/primeira-peça.jpg.jpg";
 import lanterna from "@/lanterna.jpg.jpg";
 import danielCarvalho from "@/daniel-carvalho.jpg.png";
 import parachoque from "@/parachoque.jpg.jpg";
@@ -89,8 +89,8 @@ const reasons = [
 ];
 const testimonials = [
   {
-    img: testimonialBox,
-    productLabel: "Registro do feedback recebido",
+    img: primeiraPeca,
+    productLabel: "Peça",
     text: "Chegou aqui sim. Produto muito bem embalado e no prazo. Pode ficar tranquilo que deu tudo certo.",
     name: "Lucas F.",
     city: "Fortaleza, CE",
@@ -351,21 +351,16 @@ function Index() {
           </div>
 
           <div className="mx-auto max-w-3xl">
-            <article className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm md:grid-cols-[0.75fr_1.25fr]">
-              <div className="relative flex h-32 items-center justify-center overflow-hidden border-b border-border bg-white p-3 sm:h-40 md:h-auto md:min-h-[270px] md:border-b-0 md:border-r">
+            <article className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+              <div className="relative aspect-[3/1] w-full overflow-hidden border-b border-border bg-muted">
                 {currentTestimonial.img ? (
-                  <img src={currentTestimonial.img} alt="Registro do feedback recebido pelo WhatsApp" className="h-full max-w-full object-contain" loading="lazy" />
+                  <img src={currentTestimonial.img} alt={`Foto do produto: ${currentTestimonial.productLabel}`} className="block h-full w-full object-cover" loading="lazy" />
                 ) : (
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-slate-300 bg-white text-center text-slate-400">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-1 bg-muted text-center text-slate-400">
                     <span className="text-2xl leading-none" aria-hidden="true">＋</span>
                     <span className="px-3 text-xs font-medium">{currentTestimonial.productLabel}</span>
                     <span className="text-[10px]">Espaço reservado para a foto</span>
                   </div>
-                )}
-                {currentTestimonial.draft && (
-                  <span className="absolute right-2 top-2 rounded-full border border-amber-200 bg-amber-50 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-amber-800">
-                    Rascunho
-                  </span>
                 )}
               </div>
 
