@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
-  Mail, MapPin, Menu, MessageCircle, Phone, Shield, Star, Thermometer, Truck, X, Zap, FileText,
+  ArrowRight, Award, Car, Check, ChevronDown, Clock, Cog, Disc3, GitMerge,
+  Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
 import hero from "@/assets/hero-fachada.jpg";
@@ -88,9 +88,7 @@ const testimonials = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-  const [t, setT] = useState(0);
-  const cur = testimonials[t] ?? testimonials[0]!;
-  const step = (d: number) => setT((t + d + testimonials.length) % testimonials.length);
+  const cur = testimonials[0]!;
 
   return (
     <div id="top" className="min-h-screen bg-background font-sans text-navy">
@@ -297,45 +295,53 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-muted py-8 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center md:mb-16">
-            <h2 className="mb-3 text-balance text-2xl font-bold tracking-tight text-navy sm:text-4xl md:mb-4 md:text-5xl">O que nossos clientes dizem</h2>
-            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">Avaliações reais de clientes que compraram e receberam nossas peças.</p>
+      <section id="testimonials" className="relative overflow-hidden bg-muted py-12 md:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/70 to-transparent" />
+        <div className="container relative mx-auto max-w-6xl px-4">
+          <div className="mx-auto mb-8 max-w-2xl text-center md:mb-12">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-card px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+              <MessageCircle className="h-3.5 w-3.5" /> Feedback de cliente
+            </span>
+            <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-navy sm:text-4xl md:text-5xl">A experiência de quem compra</h2>
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">Um relato recebido após a entrega, compartilhado para mostrar como foi a experiência com a Solução Auto Parts.</p>
           </div>
-          <div className="mx-auto max-w-2xl">
-            <div className="overflow-hidden border border-border bg-card shadow-lg">
-              <div className="flex items-center justify-between bg-gradient-to-r from-brand to-navy px-4 py-3 md:px-6">
-                <span className="flex items-center gap-2 text-xs font-medium text-white md:text-sm"><MessageCircle className="h-4 w-4" /> via WhatsApp</span>
-                <span className="flex gap-0.5">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}</span>
-              </div>
-              <div className="flex min-h-64 items-center justify-center bg-muted p-4 md:min-h-80 md:p-6">
-                <img src={cur.img} alt="Peça recebida pelo cliente" className="max-h-64 max-w-full object-contain md:max-h-80" loading="lazy" />
-              </div>
-              <div className="px-4 py-4 md:px-6 md:py-6">
-                <div className="border border-brand/20 bg-brand-soft p-3 md:p-4">
-                  <p className="text-sm leading-relaxed text-foreground md:text-base">"{cur.text}"</p>
-                  <div className="mt-2 flex justify-end"><span className="text-xs text-muted-foreground">{cur.time}</span></div>
-                </div>
-              </div>
-              <div className="border-t border-border px-4 py-4 md:px-6 md:py-5">
-                <div className="flex items-center gap-3">
-                  <img src={cur.avatar} alt={`Foto de ${cur.name}`} className="h-10 w-10 border-2 border-brand object-cover md:h-12 md:w-12" />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground md:text-base">{cur.name}</p>
-                    <p className="text-xs text-muted-foreground md:text-sm">{cur.city}</p>
-                  </div>
-                </div>
-              </div>
+
+          <article className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:grid-cols-[0.95fr_1.05fr] md:shadow-xl">
+            <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-white p-5 sm:p-8 md:min-h-[400px]">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-navy/5" />
+              <img src={cur.img} alt="Registro do feedback recebido do cliente" className="relative max-h-[360px] max-w-full object-contain" loading="lazy" />
+              <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/95 px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
+                <MessageCircle className="h-3.5 w-3.5 text-brand" /> Recebido pelo WhatsApp
+              </span>
             </div>
-            <div className="mt-6 flex items-center justify-center gap-4">
-              <button onClick={() => step(-1)} aria-label="Anterior" className="border border-border bg-card p-2 hover:bg-brand-soft"><ChevronLeft className="h-5 w-5" /></button>
-              {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setT(i)} aria-label={`Avaliação ${i + 1}`} className={`h-2 transition-all ${i === t ? "w-6 bg-brand" : "w-2 bg-border"}`} />
-              ))}
-              <button onClick={() => step(1)} aria-label="Próxima" className="border border-border bg-card p-2 hover:bg-brand-soft"><ChevronRight className="h-5 w-5" /></button>
+
+            <div className="flex flex-col justify-center p-5 sm:p-8 md:p-10 lg:p-12">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                <MessageCircle className="h-5 w-5" />
+              </div>
+              <blockquote className="text-xl font-medium leading-relaxed tracking-tight text-foreground sm:text-2xl md:text-[1.65rem]">
+                “{cur.text}”
+              </blockquote>
+              <div className="my-7 h-px w-full bg-border" />
+              <div className="flex items-center gap-3">
+                <img src={cur.avatar} alt="" className="h-12 w-12 rounded-full border border-border object-cover" loading="lazy" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-foreground">{cur.name}</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">{cur.city}</p>
+                </div>
+                <span className="hidden rounded-full bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground sm:inline-flex">Feedback compartilhado</span>
+              </div>
+              <a
+                href={wa("Olá! Já comprei com a Solução Auto Parts e gostaria de compartilhar meu feedback sobre a experiência.")}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 md:self-start"
+              >
+                <MessageCircle className="h-4 w-4" /> Comprou com a gente? Conte sua experiência
+              </a>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Publicamos relatos com cuidado e respeito à privacidade dos clientes.</p>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
