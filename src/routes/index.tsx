@@ -14,6 +14,10 @@ import testimonialBox from "@/assets/testimonial-hyundai-box.png";
 import lucas from "@/assets/lucas.png";
 import lanterna from "@/lanterna.jpg.jpg";
 import danielCarvalho from "@/daniel-carvalho.jpg.png";
+import parachoque from "@/parachoque.jpg.jpg";
+import retrovisor from "@/retrovisor.jpg.jpg";
+import jonasSantos from "@/jonas-santos.jpg.png";
+import niltonFerreira from "@/nilton-ferreira.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,21 +107,21 @@ const testimonials = [
     draft: true,
   },
   {
-    img: null,
-    productLabel: "Foto da parte central do para-choque",
+    img: parachoque,
+    productLabel: "Para-choque — parte central",
     text: "Recebi a peça do para-choque direitinho. Ela veio bem protegida, e o atendimento me ajudou a encontrar a opção certa para o meu carro.",
-    name: "Cliente — confirmar",
+    name: "Jonas Santos",
     city: "Aracaju - SE",
-    avatar: null,
+    avatar: jonasSantos,
     draft: true,
   },
   {
-    img: null,
-    productLabel: "Foto do retrovisor",
+    img: retrovisor,
+    productLabel: "Retrovisor",
     text: "O retrovisor chegou tudo certo! Consegui tirar minhas dúvidas durante o atendimento e a peça veio bem embalada.",
-    name: "Cliente — confirmar",
+    name: "Nilton Ferreira",
     city: "Salvador - BA",
-    avatar: null,
+    avatar: niltonFerreira,
     draft: true,
   },
 ];
