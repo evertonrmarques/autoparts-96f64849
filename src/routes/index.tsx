@@ -343,7 +343,7 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
-            {testimonials.map((item, index) => (
+            {testimonials.map((item) => (
               <article key={item.productLabel} className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
                 <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-border bg-white p-4 sm:h-44">
                   {item.img ? (
