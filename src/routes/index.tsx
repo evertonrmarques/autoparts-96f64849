@@ -82,13 +82,47 @@ const reasons = [
   { icon: Clock, title: "Atendimento Ágil", text: "Resposta rápida e atendimento personalizado" },
 ];
 const testimonials = [
-  { img: testimonialBox, text: "Chegou aqui sim. Produto muito bem embalado e no prazo. Pode ficar tranquilo que deu tudo certo.", time: "14:22", name: "Lucas F.", city: "Fortaleza, CE", avatar: lucas },
+  {
+    img: testimonialBox,
+    productLabel: "Registro do feedback recebido",
+    text: "Chegou aqui sim. Produto muito bem embalado e no prazo. Pode ficar tranquilo que deu tudo certo.",
+    name: "Lucas F.",
+    city: "Fortaleza, CE",
+    avatar: lucas,
+    draft: false,
+  },
+  {
+    img: null,
+    productLabel: "Foto da lanterna",
+    text: "A lanterna chegou certinha, bem embalada e conforme combinado. O atendimento foi atencioso e o envio ocorreu dentro do prazo.",
+    name: "Cliente — confirmar",
+    city: "Avaliação em revisão",
+    avatar: null,
+    draft: true,
+  },
+  {
+    img: null,
+    productLabel: "Foto da parte central do para-choque",
+    text: "Recebi a peça do para-choque direitinho. Ela veio bem protegida, e o atendimento me ajudou a encontrar a opção certa para o meu carro.",
+    name: "Cliente — confirmar",
+    city: "Avaliação em revisão",
+    avatar: null,
+    draft: true,
+  },
+  {
+    img: null,
+    productLabel: "Foto do retrovisor",
+    text: "O retrovisor chegou tudo certo! Consegui tirar minhas dúvidas durante o atendimento e a peça veio bem embalada.",
+    name: "Cliente — confirmar",
+    city: "Avaliação em revisão",
+    avatar: null,
+    draft: true,
+  },
 ];
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-  const cur = testimonials[0]!;
 
   return (
     <div id="top" className="min-h-screen bg-background font-sans text-navy">
@@ -295,53 +329,81 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="relative overflow-hidden bg-muted py-12 md:py-20">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/70 to-transparent" />
+      <section id="testimonials" className="relative overflow-hidden bg-muted py-10 md:py-14">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/70 to-transparent" />
         <div className="container relative mx-auto max-w-6xl px-4">
-          <div className="mx-auto mb-8 max-w-2xl text-center md:mb-12">
+          <div className="mx-auto mb-7 max-w-2xl text-center md:mb-9">
             <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-card px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
               <MessageCircle className="h-3.5 w-3.5" /> Feedback de cliente
             </span>
-            <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-navy sm:text-4xl md:text-5xl">A experiência de quem compra</h2>
-            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">Um relato recebido após a entrega, compartilhado para mostrar como foi a experiência com a Solução Auto Parts.</p>
+            <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-navy sm:text-4xl">A experiência de quem compra</h2>
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              Um feedback recebido e três propostas de texto para revisão. Os rascunhos serão confirmados antes de serem publicados como avaliações de clientes.
+            </p>
           </div>
 
-          <article className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:grid-cols-[0.95fr_1.05fr] md:shadow-xl">
-            <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-white p-5 sm:p-8 md:min-h-[400px]">
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-navy/5" />
-              <img src={cur.img} alt="Registro do feedback recebido do cliente" className="relative max-h-[360px] max-w-full object-contain" loading="lazy" />
-              <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/95 px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
-                <MessageCircle className="h-3.5 w-3.5 text-brand" /> Recebido pelo WhatsApp
-              </span>
-            </div>
-
-            <div className="flex flex-col justify-center p-5 sm:p-8 md:p-10 lg:p-12">
-              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                <MessageCircle className="h-5 w-5" />
-              </div>
-              <blockquote className="text-xl font-medium leading-relaxed tracking-tight text-foreground sm:text-2xl md:text-[1.65rem]">
-                “{cur.text}”
-              </blockquote>
-              <div className="my-7 h-px w-full bg-border" />
-              <div className="flex items-center gap-3">
-                <img src={cur.avatar} alt="" className="h-12 w-12 rounded-full border border-border object-cover" loading="lazy" />
-                <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-foreground">{cur.name}</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">{cur.city}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+            {testimonials.map((item, index) => (
+              <article key={item.productLabel} className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
+                <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-border bg-white p-4 sm:h-44">
+                  {item.img ? (
+                    <img src={item.img} alt="Registro do feedback recebido pelo WhatsApp" className="h-full max-w-full object-contain" loading="lazy" />
+                  ) : (
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-slate-300 bg-white text-center text-slate-400">
+                      <span className="text-3xl leading-none" aria-hidden="true">＋</span>
+                      <span className="px-4 text-xs font-medium">{item.productLabel}</span>
+                      <span className="text-[11px]">Espaço reservado para a foto</span>
+                    </div>
+                  )}
+                  {item.draft && (
+                    <span className="absolute right-3 top-3 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-800">
+                      Texto sugerido
+                    </span>
+                  )}
                 </div>
-                <span className="hidden rounded-full bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground sm:inline-flex">Feedback compartilhado</span>
-              </div>
-              <a
-                href={wa("Olá! Já comprei com a Solução Auto Parts e gostaria de compartilhar meu feedback sobre a experiência.")}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 md:self-start"
-              >
-                <MessageCircle className="h-4 w-4" /> Comprou com a gente? Conte sua experiência
-              </a>
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Publicamos relatos com cuidado e respeito à privacidade dos clientes.</p>
-            </div>
-          </article>
+
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                    <MessageCircle className="h-4 w-4" />
+                  </div>
+                  <blockquote className="flex-1 text-sm leading-relaxed text-foreground sm:text-base">
+                    “{item.text}”
+                  </blockquote>
+                  <div className="my-4 h-px w-full bg-border" />
+                  <div className="flex items-center gap-3">
+                    {item.avatar ? (
+                      <img src={item.avatar} alt="" className="h-11 w-11 shrink-0 rounded-full border border-border object-cover" loading="lazy" />
+                    ) : (
+                      <div aria-label="Espaço reservado para foto circular do cliente" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-dashed border-slate-300 bg-white text-center text-[9px] font-medium leading-tight text-slate-400">
+                        Foto<br />cliente
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-foreground">{item.name}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{item.city}</p>
+                    </div>
+                    {!item.draft && (
+                      <span className="ml-auto hidden rounded-full bg-muted px-2.5 py-1 text-[10px] font-medium text-muted-foreground sm:inline-flex">
+                        Feedback recebido
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center md:mt-7">
+            <a
+              href={wa("Olá! Já comprei com a Solução Auto Parts e gostaria de compartilhar meu feedback sobre a experiência.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2"
+            >
+              <MessageCircle className="h-4 w-4" /> Comprou com a gente? Conte sua experiência
+            </a>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">As fotos dos produtos e os perfis circulares estão reservados para você adicionar depois.</p>
+          </div>
         </div>
       </section>
 
