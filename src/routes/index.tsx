@@ -9,7 +9,7 @@ import hero from "@/assets/hero-fachada.jpg";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import diagrama from "@/assets/diagrama.png";
-import delivery from "@/assets/parts-delivery.jpg";
+import delivery from "@/garantia-pecas.jpg.png";
 import warehouse from "@/assets/hyundai-warehouse-new.png";
 import testimonialBox from "@/assets/testimonial-hyundai-box.png";
 import lucas from "@/assets/lucas.png";
