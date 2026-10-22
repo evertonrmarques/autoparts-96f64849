@@ -7,7 +7,7 @@ import {
 import logo from "@/assets/solucao-auto-parts-logo.webp";
 import hero from "@/assets/hero-fachada.jpg";
 import categorias from "@/assets/categorias.png";
-import workbench from "@/assets/hyundai-part-workbench-new.jpg";
+import workbench from "@/galeria-pecas.jpg.png";
 import diagrama from "@/assets/diagrama.png";
 import delivery from "@/assets/parts-delivery.jpg";
 import warehouse from "@/assets/hyundai-warehouse-new.png";
