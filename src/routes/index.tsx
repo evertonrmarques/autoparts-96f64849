@@ -5,7 +5,7 @@ import {
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
-import hero from "@/assets/hero-fachada.jpg";
+import hero from "@/hero-fachada1.jpg.jpg";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import delivery from "@/garantia-pecas.jpg.png";
