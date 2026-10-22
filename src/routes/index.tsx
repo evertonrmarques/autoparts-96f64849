@@ -8,7 +8,6 @@ import logo from "@/assets/solucao-auto-parts-logo.webp";
 import hero from "@/assets/hero-fachada.jpg";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
-import diagrama from "@/assets/diagrama.png";
 import delivery from "@/garantia-pecas.jpg.png";
 import warehouse from "@/assets/hyundai-warehouse-new.png";
 import testimonialBox from "@/assets/testimonial-hyundai-box.png";
@@ -252,8 +251,29 @@ function Index() {
             <p className="text-base md:text-lg">Encontre peças Hyundai originais e compatíveis com garantia, procedência e suporte especializado.</p>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-            <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border bg-card shadow-md">
-              <img src={diagrama} alt="Diagrama técnico de peças automotivas - sistema de ar condicionado e aquecimento" className="h-full max-h-[320px] w-full object-contain md:max-h-[380px]" loading="lazy" />
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
+              <iframe
+                title="Localização da Solução Auto Parts no Google Maps"
+                src="https://maps.google.com/maps?q=Rua%20Itaqueri%2C%20641%2C%20Alto%20da%20Mooca%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003178-000&output=embed"
+                className="h-[280px] w-full border-0 md:h-[320px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="font-semibold text-foreground">Solução Auto Parts</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">Rua Itaqueri, 641 — Alto da Mooca, São Paulo - SP, 03178-000</p>
+                </div>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Rua%20Itaqueri%2C%20641%2C%20Alto%20da%20Mooca%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003178-000"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy"
+                >
+                  Como chegar
+                </a>
+              </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-md">
               <img src={delivery} alt="Entrega de caixa Solução Auto Parts na porta do cliente" className="h-full max-h-[320px] w-full object-cover md:max-h-[380px]" loading="lazy" />
