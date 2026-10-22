@@ -89,6 +89,15 @@ const reasons = [
 ];
 const testimonials = [
   {
+    img: parachoque,
+    productLabel: "Para-choque — parte central",
+    text: "Recebi a peça do para-choque direitinho. Ela veio bem protegida, e o atendimento me ajudou a encontrar a opção certa para o meu carro.",
+    name: "Jonas Santos",
+    city: "Aracaju - SE",
+    avatar: jonasSantos,
+    draft: true,
+  },
+  {
     img: primeiraPeca,
     productLabel: "Peça",
     text: "Chegou aqui sim. Produto muito bem embalado e no prazo. Pode ficar tranquilo que deu tudo certo.",
@@ -104,15 +113,6 @@ const testimonials = [
     name: "Daniel Carvalho",
     city: "São Paulo - SP",
     avatar: danielCarvalho,
-    draft: true,
-  },
-  {
-    img: parachoque,
-    productLabel: "Para-choque — parte central",
-    text: "Recebi a peça do para-choque direitinho. Ela veio bem protegida, e o atendimento me ajudou a encontrar a opção certa para o meu carro.",
-    name: "Jonas Santos",
-    city: "Aracaju - SE",
-    avatar: jonasSantos,
     draft: true,
   },
   {
