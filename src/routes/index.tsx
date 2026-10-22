@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  ArrowRight, Award, Car, Check, ChevronDown, Clock, Cog, Disc3, GitMerge,
+  ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
@@ -123,6 +123,8 @@ const testimonials = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const currentTestimonial = testimonials[testimonialIndex]!;
 
   return (
     <div id="top" className="min-h-screen bg-background font-sans text-navy">
@@ -329,80 +331,105 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="relative overflow-hidden bg-muted py-10 md:py-14">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/70 to-transparent" />
-        <div className="container relative mx-auto max-w-6xl px-4">
-          <div className="mx-auto mb-7 max-w-2xl text-center md:mb-9">
-            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-card px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+      <section id="testimonials" className="relative overflow-hidden bg-muted py-8 sm:py-10 md:py-14">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background/70 to-transparent" />
+        <div className="container relative mx-auto max-w-5xl px-3 sm:px-4">
+          <div className="mx-auto mb-5 max-w-2xl text-center sm:mb-7">
+            <span className="mb-2 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-card px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-brand sm:text-xs">
               <MessageCircle className="h-3.5 w-3.5" /> Feedback de cliente
             </span>
-            <h2 className="mb-3 text-balance text-3xl font-bold tracking-tight text-navy sm:text-4xl">A experiência de quem compra</h2>
-            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Um feedback recebido e três propostas de texto para revisão. Os rascunhos serão confirmados antes de serem publicados como avaliações de clientes.
+            <h2 className="mb-2 text-balance text-2xl font-bold tracking-tight text-navy sm:text-3xl md:text-4xl">A experiência de quem compra</h2>
+            <p className="mx-auto max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              Confira os relatos e use as setas para navegar. Os três novos textos são rascunhos para revisão.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
-            {testimonials.map((item) => (
-              <article key={item.productLabel} className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
-                <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-border bg-white p-4 sm:h-44">
-                  {item.img ? (
-                    <img src={item.img} alt="Registro do feedback recebido pelo WhatsApp" className="h-full max-w-full object-contain" loading="lazy" />
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-slate-300 bg-white text-center text-slate-400">
-                      <span className="text-3xl leading-none" aria-hidden="true">＋</span>
-                      <span className="px-4 text-xs font-medium">{item.productLabel}</span>
-                      <span className="text-[11px]">Espaço reservado para a foto</span>
-                    </div>
-                  )}
-                  {item.draft && (
-                    <span className="absolute right-3 top-3 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-800">
-                      Texto sugerido
-                    </span>
-                  )}
-                </div>
+          <div className="mx-auto max-w-3xl">
+            <article className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm md:grid-cols-[0.75fr_1.25fr]">
+              <div className="relative flex h-32 items-center justify-center overflow-hidden border-b border-border bg-white p-3 sm:h-40 md:h-auto md:min-h-[270px] md:border-b-0 md:border-r">
+                {currentTestimonial.img ? (
+                  <img src={currentTestimonial.img} alt="Registro do feedback recebido pelo WhatsApp" className="h-full max-w-full object-contain" loading="lazy" />
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-slate-300 bg-white text-center text-slate-400">
+                    <span className="text-2xl leading-none" aria-hidden="true">＋</span>
+                    <span className="px-3 text-xs font-medium">{currentTestimonial.productLabel}</span>
+                    <span className="text-[10px]">Espaço reservado para a foto</span>
+                  </div>
+                )}
+                {currentTestimonial.draft && (
+                  <span className="absolute right-2 top-2 rounded-full border border-amber-200 bg-amber-50 px-2 py-1 text-[9px] font-semibold uppercase tracking-wide text-amber-800">
+                    Rascunho
+                  </span>
+                )}
+              </div>
 
-                <div className="flex flex-1 flex-col p-4 sm:p-5">
-                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                    <MessageCircle className="h-4 w-4" />
-                  </div>
-                  <blockquote className="flex-1 text-sm leading-relaxed text-foreground sm:text-base">
-                    “{item.text}”
-                  </blockquote>
-                  <div className="my-4 h-px w-full bg-border" />
-                  <div className="flex items-center gap-3">
-                    {item.avatar ? (
-                      <img src={item.avatar} alt="" className="h-11 w-11 shrink-0 rounded-full border border-border object-cover" loading="lazy" />
-                    ) : (
-                      <div aria-label="Espaço reservado para foto circular do cliente" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-dashed border-slate-300 bg-white text-center text-[9px] font-medium leading-tight text-slate-400">
-                        Foto<br />cliente
-                      </div>
-                    )}
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground">{item.name}</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">{item.city}</p>
-                    </div>
-                    {!item.draft && (
-                      <span className="ml-auto hidden rounded-full bg-muted px-2.5 py-1 text-[10px] font-medium text-muted-foreground sm:inline-flex">
-                        Feedback recebido
-                      </span>
-                    )}
-                  </div>
+              <div className="flex min-w-0 flex-col justify-center p-4 sm:p-5 md:p-6">
+                <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                  <MessageCircle className="h-4 w-4" />
                 </div>
-              </article>
-            ))}
+                <blockquote className="text-sm leading-relaxed text-foreground sm:text-base">
+                  “{currentTestimonial.text}”
+                </blockquote>
+                <div className="my-3 h-px w-full bg-border" />
+                <div className="flex items-center gap-2.5">
+                  {currentTestimonial.avatar ? (
+                    <img src={currentTestimonial.avatar} alt="" className="h-10 w-10 shrink-0 rounded-full border border-border object-cover" loading="lazy" />
+                  ) : (
+                    <div aria-label="Espaço reservado para foto circular do cliente" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-dashed border-slate-300 bg-white text-center text-[9px] font-medium leading-tight text-slate-400">
+                      Foto<br />cliente
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-foreground">{currentTestimonial.name}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">{currentTestimonial.city}</p>
+                  </div>
+                  <span className="ml-auto text-[10px] text-muted-foreground sm:text-xs">{testimonialIndex + 1} de {testimonials.length}</span>
+                </div>
+              </div>
+            </article>
+
+            <div className="mt-3 flex items-center justify-between gap-3">
+              <button
+                type="button"
+                aria-label="Ver avaliação anterior"
+                onClick={() => setTestimonialIndex((index) => (index - 1 + testimonials.length) % testimonials.length)}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-brand hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <div className="flex items-center justify-center gap-1.5" aria-label="Selecionar avaliação">
+                {testimonials.map((item, index) => (
+                  <button
+                    key={item.productLabel}
+                    type="button"
+                    aria-label={`Ver avaliação ${index + 1}`}
+                    aria-current={testimonialIndex === index ? "true" : undefined}
+                    onClick={() => setTestimonialIndex(index)}
+                    className={`h-2 rounded-full transition-all ${testimonialIndex === index ? "w-6 bg-brand" : "w-2 bg-border hover:bg-brand/50"}`}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                aria-label="Ver próxima avaliação"
+                onClick={() => setTestimonialIndex((index) => (index + 1) % testimonials.length)}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-brand hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="mt-6 text-center md:mt-7">
+          <div className="mt-5 text-center sm:mt-6">
             <a
               href={wa("Olá! Já comprei com a Solução Auto Parts e gostaria de compartilhar meu feedback sobre a experiência.")}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2"
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-whatsapp px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 sm:text-sm"
             >
               <MessageCircle className="h-4 w-4" /> Comprou com a gente? Conte sua experiência
             </a>
-            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">As fotos dos produtos e os perfis circulares estão reservados para você adicionar depois.</p>
+            <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground sm:text-xs">Os espaços de foto do produto e do perfil ficam reservados para substituir depois.</p>
           </div>
         </div>
       </section>
