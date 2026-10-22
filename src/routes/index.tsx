@@ -12,6 +12,8 @@ import delivery from "@/garantia-pecas.jpg.png";
 import warehouse from "@/assets/hyundai-warehouse-new.png";
 import testimonialBox from "@/assets/testimonial-hyundai-box.png";
 import lucas from "@/assets/lucas.png";
+import lanterna from "@/lanterna.jpg.jpg";
+import danielCarvalho from "@/daniel-carvalho.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,12 +94,12 @@ const testimonials = [
     draft: false,
   },
   {
-    img: null,
-    productLabel: "Foto da lanterna",
+    img: lanterna,
+    productLabel: "Lanterna",
     text: "A lanterna chegou certinha, bem embalada e conforme combinado. O atendimento foi atencioso e o envio ocorreu dentro do prazo.",
-    name: "Cliente — confirmar",
-    city: "Avaliação em revisão",
-    avatar: null,
+    name: "Daniel Carvalho",
+    city: "",
+    avatar: danielCarvalho,
     draft: true,
   },
   {
@@ -381,7 +383,7 @@ function Index() {
                   )}
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-foreground">{currentTestimonial.name}</p>
-                    <p className="mt-0.5 text-xs text-muted-foreground">{currentTestimonial.city}</p>
+                    {currentTestimonial.city && <p className="mt-0.5 text-xs text-muted-foreground">{currentTestimonial.city}</p>}
                   </div>
                   <span className="ml-auto text-[10px] text-muted-foreground sm:text-xs">{testimonialIndex + 1} de {testimonials.length}</span>
                 </div>
