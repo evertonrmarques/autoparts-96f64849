@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "5511952709818";
 const wa = (text: string) => `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
-const QUOTE = wa("Olá! Vim pelo site e preciso de um orçamento de peça Hyundai.");
+const QUOTE = wa("Setor de peças, gostaria de uma cotação.");
 
 const nav = [
   ["#catalog", "Catálogo"], ["#gallery", "Galeria"], ["#guarantee", "Garantia"],
@@ -185,7 +185,7 @@ function Index() {
             <p className="mb-2 mt-4 text-xs font-semibold leading-5 text-white sm:mt-5 sm:text-sm">Escolha seu modelo:</p>
             <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
               {heroModels.map((m) => (
-                <a key={m} href={wa(`Olá! Preciso de uma peça para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium leading-4 text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
+                <a key={m} href={wa(`Setor de peças, gostaria de uma cotação para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium leading-4 text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
               ))}
             </div>
 
@@ -236,7 +236,7 @@ function Index() {
                   )}
                 </div>
                 <div className="mt-auto px-5 pt-2 md:px-6">
-                  <a href={wa(`Olá! Preciso de uma peça de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:py-2.5 md:font-medium">
+                  <a href={wa(`Setor de peças, gostaria de uma cotação de ${name} para meu Hyundai.`)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy md:py-2.5 md:font-medium">
                     Consultar no WhatsApp <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
