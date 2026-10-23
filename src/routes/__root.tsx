@@ -102,8 +102,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
+        {/* Google Ads tag — AW-18488169955 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18488169955" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18488169955');`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
