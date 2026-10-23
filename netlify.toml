@@ -1,7 +1,7 @@
-# Publica a versão compilada do projeto, não uma cópia baixada do site.
+# Netlify uses its own serverless build output; Firebase keeps its separate static workflow.
 [build]
   command = "bun install --frozen-lockfile && bun run build"
-  publish = ".output/public"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
