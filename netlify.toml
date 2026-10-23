@@ -1,7 +1,7 @@
-# Publica a versão estática gerada pelo prerender do TanStack Start.
+# Build TanStack Start for Netlify using its official Vite adapter.
 [build]
-  command = "bun install --frozen-lockfile && bun run build"
-  publish = ".output/public"
+  command = "bun run build"
+  publish = "dist/client"
 
 [build.environment]
   NODE_VERSION = "22"
