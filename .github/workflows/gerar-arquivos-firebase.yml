@@ -1,0 +1,50 @@
+name: Gerar arquivos do site para Firebase
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+
+      - name: Compilar o site estático
+        run: bun run build
+
+      - name: Verificar os arquivos publicados
+        run: |
+          if [ ! -f .output/public/index.html ]; then
+            echo "Não foi encontrado .output/public/index.html"
+            echo "Arquivos HTML encontrados:"
+            find .output -maxdepth 5 -type f -name '*.html' -print || true
+            echo "Conteúdo de .output:"
+            find .output -maxdepth 3 -type f | head -200 || true
+            exit 1
+          fi
+
+      - name: Empacotar os arquivos para Firebase Hosting
+        run: |
+          cd .output/public
+          zip -r ../../solucao-auto-parts-firebase.zip .
+
+      - name: Disponibilizar o ZIP para download
+        uses: actions/upload-artifact@v4
+        with:
+          name: solucao-auto-parts-firebase
+          path: solucao-auto-parts-firebase.zip
+          if-no-files-found: error
+          retention-days: 14
