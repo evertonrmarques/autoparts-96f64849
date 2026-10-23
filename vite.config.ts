@@ -1,5 +1,6 @@
 // @lovable.dev/vite-tanstack-config already includes the app's build plugins.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 
 // Firebase Hosting uses a pre-rendered static package and the custom server entry.
 // Netlify builds a serverless function, so it must not use the Firebase prerender step.
@@ -20,4 +21,13 @@ export default defineConfig({
           failOnError: true,
         },
       },
+  ...(isNetlifyBuild
+    ? {
+        // The Netlify adapter replaces the default Nitro/Cloudflare build target.
+        nitro: false,
+        vite: {
+          plugins: [netlify()],
+        },
+      }
+    : {}),
 });
