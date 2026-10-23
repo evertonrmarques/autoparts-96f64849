@@ -1,4 +1,5 @@
 # Build TanStack Start for Netlify using its official Vite adapter.
+# The publication directory matches the adapter's client output.
 [build]
   command = "bun run build"
   publish = "dist/client"
