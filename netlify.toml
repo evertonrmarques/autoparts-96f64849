@@ -1,0 +1,7 @@
+# Publica a versão compilada do projeto, não uma cópia baixada do site.
+[build]
+  command = "bun run build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
