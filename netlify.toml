@@ -1,6 +1,6 @@
 # Publica a versão compilada do projeto, não uma cópia baixada do site.
 [build]
-  command = "bun run build"
+  command = "bun install --frozen-lockfile && bun run build"
   publish = ".output/public"
 
 [build.environment]
