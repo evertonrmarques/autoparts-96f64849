@@ -1,7 +1,7 @@
-# Netlify uses its own serverless build output; Firebase keeps its separate static workflow.
+# Publica a versão estática gerada pelo prerender do TanStack Start.
 [build]
   command = "bun install --frozen-lockfile && bun run build"
-  publish = "dist"
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "22"
