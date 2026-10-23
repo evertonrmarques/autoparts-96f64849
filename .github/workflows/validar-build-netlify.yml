@@ -1,0 +1,45 @@
+name: Validar build Netlify
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "vite.config.ts"
+      - "netlify.toml"
+      - "package.json"
+      - "bun.lock"
+      - "src/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NETLIFY: "true"
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Instalar dependências travadas
+        run: bun install --frozen-lockfile
+
+      - name: Compilar para Netlify
+        run: bun run build
+
+      - name: Conferir saída de publicação
+        run: |
+          if [ ! -d dist/client ]; then
+            echo "Não foi gerada a pasta dist/client."
+            echo "Pastas dist/output encontradas:"
+            find . -maxdepth 4 -type d \( -name client -o -name public -o -name dist \) -print || true
+            exit 1
+          fi
+          echo "Saída de publicação encontrada: dist/client"
+          find dist/client -maxdepth 2 -type f | head -60
