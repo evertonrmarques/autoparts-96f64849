@@ -1,0 +1,39 @@
+name: Sincronizar bun.lock
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "package.json"
+
+permissions:
+  contents: write
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Preparar Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Atualizar lockfile
+        run: bun install
+
+      - name: Salvar bun.lock atualizado
+        run: |
+          if git diff --quiet -- bun.lock; then
+            echo "bun.lock já está atualizado."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bun.lock
+          git commit -m "chore: sincroniza bun.lock"
+          git push origin main
