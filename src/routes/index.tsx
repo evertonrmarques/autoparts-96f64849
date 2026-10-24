@@ -179,7 +179,8 @@ function Index() {
                 <MessageCircle className="h-5 w-5" /> Pedir orçamento no WhatsApp
               </a>
               <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-between gap-3 rounded-xl border border-amber-500 bg-amber-400 px-4 py-2.5 text-left text-sm font-bold text-navy shadow-lg transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:min-w-[250px]">
-                <span className="flex flex-col leading-tight">
+                <Zap className="h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
+                <span className="flex flex-1 flex-col leading-tight">
                   <span>Quer entrega imediata?</span>
                   <span className="mt-0.5 underline decoration-2 underline-offset-2">Clique aqui e fale agora!</span>
                 </span>
