@@ -427,3 +427,42 @@ footer {
     touch-action: manipulation;
   }
 }
+
+/* Consistent rounded corners across cards, controls, image frames and CTAs. */
+@layer base {
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [role="button"] {
+    border-radius: 0.75rem;
+  }
+}
+
+a[class*="bg-whatsapp"],
+a[class*="bg-brand"],
+a[class*="bg-amber-400"] {
+  border-radius: 0.9rem;
+}
+
+div[class~="border"][class*="bg-card"][class*="shadow"],
+div[class~="border"][class*="bg-muted"][class*="shadow"],
+div[class~="border"][class*="bg-white"][class*="shadow"],
+article[class~="border"],
+#gallery div[class~="border"],
+#guarantee div[class~="border"] {
+  border-radius: 1rem;
+}
+
+#testimonials article {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Round the square icon tiles to match the rest of the interface. */
+div[class*="bg-brand-soft"][class*="h-"][class*="w-"],
+div[class*="bg-brand"][class*="h-"][class*="w-"]:not(header *) {
+  border-radius: 0.9rem;
+}
+
