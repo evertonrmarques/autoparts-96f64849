@@ -42,7 +42,6 @@ const nav = [
   ["#about", "Sobre"], ["#testimonials", "Avaliações"], ["#contact", "Contato"],
 ];
 const heroModels = ["HB20", "HB20S", "HB20X", "Creta", "Tucson", "ix35", "Santa Fe", "i30", "Azera", "HR"];
-const allModels = ["HB20", "HB20S", "HB20X", "Creta", "Tucson", "ix35", "Santa Fe", "Grand Santa Fe", "Azera", "i30", "Elantra", "Sonata", "Veloster", "HR", "Atos"];
 const categories = [
   {
     name: "Motor e Componentes",
@@ -265,15 +264,6 @@ function Index() {
               </div>
               );
             })}
-          </div>
-          <div className="mx-auto max-w-4xl text-center">
-            <h3 className="mb-3 text-lg font-bold md:mb-4 md:text-2xl">Atendemos os principais modelos Hyundai</h3>
-            <p className="mb-6 px-2 text-sm text-muted-foreground md:text-base">Peças originais e compatíveis para toda a linha Hyundai e demais modelos da marca.</p>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-              {allModels.map((m) => (
-                <span key={m} className="rounded-full border border-brand/50 bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand md:px-4 md:py-2 md:text-base">{m}</span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
