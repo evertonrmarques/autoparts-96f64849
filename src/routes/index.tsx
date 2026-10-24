@@ -190,7 +190,7 @@ function Index() {
             </div>
             <div className="mb-3 flex items-center gap-2 text-xs font-semibold leading-5 text-white/95 sm:mb-2 sm:text-sm">
               <Phone className="h-4 w-4 shrink-0 text-white/90" />
-              <a href={QUOTE} className="underline decoration-white/50 underline-offset-4 transition-colors hover:text-amber-300">(11) 95270-9818</a>
+              <a href="tel:+5511952709818" className="underline decoration-white/50 underline-offset-4 transition-colors hover:text-amber-300">(11) 95270-9818</a>
             </div>
             <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 text-[11px] font-medium leading-5 text-white/90 sm:mt-3 sm:gap-x-4 sm:gap-y-2 sm:text-xs md:text-sm">
               {[
