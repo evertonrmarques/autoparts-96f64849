@@ -175,15 +175,19 @@ function Index() {
             <h1 className="mb-3 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:mb-4 sm:text-4xl sm:tracking-tight md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
             <p className="mb-4 max-w-xl text-[15px] leading-[1.55] text-white/90 sm:mb-5 sm:text-base sm:leading-relaxed md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
             <div className="mb-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-stretch">
-              <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-3 text-center text-sm font-bold leading-tight text-white shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy md:px-5 md:text-base">
-                <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-                <span className="text-center">Pedir orçamento no WhatsApp</span>
+              <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-whatsapp px-4 py-3 text-sm font-bold leading-tight text-white shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy md:px-5 md:text-base">
+                <span className="flex w-full items-center justify-center gap-2">
+                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  <span className="text-center">Pedir orçamento no WhatsApp</span>
+                </span>
               </a>
-              <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-amber-500 bg-amber-400 px-4 py-2.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:min-w-[250px]">
-                <Zap className="h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
-                <span className="flex flex-col items-center text-center leading-tight">
-                  <span>Quer entrega imediata?</span>
-                  <span className="mt-0.5 underline decoration-2 underline-offset-2">Clique aqui e fale agora!</span>
+              <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-amber-500 bg-amber-400 px-4 py-2.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:min-w-[250px]">
+                <span className="flex w-full items-center justify-center gap-2">
+                  <Zap className="h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
+                  <span className="flex flex-col items-center text-center leading-tight">
+                    <span>Quer entrega imediata?</span>
+                    <span className="mt-0.5 underline decoration-2 underline-offset-2">Clique aqui e fale agora!</span>
+                  </span>
                 </span>
               </a>
             </div>
