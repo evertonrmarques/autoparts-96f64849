@@ -198,9 +198,9 @@ function Index() {
               {[
                 { label: "Nota fiscal", Icon: Check },
                 { label: "Garantia", Icon: Check },
-                { label: "Entrega hoje ainda!", Icon: Zap },
+                { label: "Envio imediato!", Icon: Zap },
               ].map(({ label, Icon }) => (
-                <span key={label} className="inline-flex items-center gap-1"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Entrega hoje ainda!" ? "text-amber-300" : "text-whatsapp"} sm:h-4 sm:w-4`} />{label}</span>
+                <span key={label} className="inline-flex items-center gap-1"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Envio imediato!" ? "text-amber-300" : "text-whatsapp"} sm:h-4 sm:w-4`} />{label}</span>
               ))}
             </div>
             <p className="mb-2 mt-4 text-xs font-semibold leading-5 text-white sm:mt-5 sm:text-sm">Peças em estoque para os principais modelos Hyundai:</p>
