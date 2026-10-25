@@ -502,7 +502,7 @@ function Index() {
               <img
                 src={formasPagamento}
                 alt="Compra 100% segura. Formas de pagamento: Mastercard, Visa, boleto bancário, Hipercard e Pix."
-                className="block h-auto w-full max-w-none object-contain"
+                className="mx-auto block h-auto w-[70%] max-w-none object-contain"
                 loading="lazy"
               />
             </div>
