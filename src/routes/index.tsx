@@ -499,14 +499,12 @@ function Index() {
             </div>
             <div>
               <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Formas de pagamento</h4>
-              <div className="flex items-center justify-center rounded-xl border border-white/15 bg-navy/80 p-3 lg:justify-start">
-                <img
-                  src={formasPagamento}
-                  alt="Compra 100% segura. Formas de pagamento: Mastercard, Visa, boleto bancário, Hipercard e Pix."
-                  className="h-auto w-full max-w-[220px] object-contain"
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={formasPagamento}
+                alt="Compra 100% segura. Formas de pagamento: Mastercard, Visa, boleto bancário, Hipercard e Pix."
+                className="block h-auto w-full max-w-none object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="border-t border-white/15 pt-6 text-center">
