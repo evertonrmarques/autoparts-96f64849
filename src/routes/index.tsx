@@ -18,6 +18,7 @@ import parachoque from "@/parachoque.jpg.jpg";
 import retrovisor from "@/retrovisor.jpg.jpg";
 import jonasSantos from "@/jonas-santos.jpg.png";
 import niltonFerreira from "@/nilton-ferreira.jpg.png";
+import formasPagamento from "@/formas-pag.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -477,7 +478,7 @@ function Index() {
             <p className="mx-auto mt-2 max-w-xl text-sm text-white/70 md:text-base">Fale com nossa equipe e informe o modelo e o ano do seu Hyundai.</p>
             <a href={QUOTE} target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center bg-whatsapp px-7 py-3 text-sm font-bold text-white hover:bg-whatsapp-hover">Pedir orçamento no WhatsApp</a>
           </section>
-          <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <h3 className="mb-3 text-lg font-bold md:text-xl">Solução Auto Parts Distribuidora</h3>
               <p className="text-sm text-white/70 md:text-base">Especializada em peças Hyundai com envio imediato para todo o Brasil.</p>
@@ -495,6 +496,17 @@ function Index() {
                 <li className="flex items-center gap-2"><FileText className="h-4 w-4" />CNPJ: 55.364.781/0001-95</li>
                 <li className="flex items-start gap-2"><MapPin className="mt-1 h-4 w-4" /><span>Rua Itaqueri, 641<br />Alto da Mooca, Sao Paulo - SP<br />03178-000</span></li>
               </ul>
+            </div>
+            <div>
+              <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Formas de pagamento</h4>
+              <div className="flex items-center justify-center rounded-xl border border-white/15 bg-navy/80 p-3 lg:justify-start">
+                <img
+                  src={formasPagamento}
+                  alt="Compra 100% segura. Formas de pagamento: Mastercard, Visa, boleto bancário, Hipercard e Pix."
+                  className="h-auto w-full max-w-[220px] object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
           <div className="border-t border-white/15 pt-6 text-center">
