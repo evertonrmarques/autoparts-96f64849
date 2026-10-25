@@ -480,7 +480,7 @@ function Index() {
           <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-3">
             <div>
               <h3 className="mb-3 text-lg font-bold md:text-xl">Solução Auto Parts Distribuidora</h3>
-              <p className="text-sm text-white/70 md:text-base">Especializada em peças Hyundai com envio para todo o Brasil.</p>
+              <p className="text-sm text-white/70 md:text-base">Especializada em peças Hyundai com envio imediato para todo o Brasil.</p>
             </div>
             <div>
               <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Contato</h4>
