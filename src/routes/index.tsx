@@ -318,14 +318,14 @@ function Index() {
                   <h3 className="font-semibold text-foreground">Solução Auto Parts</h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">Rua Itaqueri, 641 — Alto da Mooca, São Paulo - SP, 03178-000</p>
                 </div>
-                <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=Rua%20Itaqueri%2C%20641%2C%20Alto%20da%20Mooca%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003178-000"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy"
+                <button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="inline-flex min-h-10 shrink-0 cursor-not-allowed items-center justify-center rounded-lg bg-brand/50 px-4 py-2 text-sm font-semibold text-white/80"
                 >
                   Como chegar
-                </a>
+                </button>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-md">
