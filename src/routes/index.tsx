@@ -18,7 +18,7 @@ import parachoque from "@/parachoque.jpg.jpg";
 import retrovisor from "@/retrovisor.jpg.jpg";
 import jonasSantos from "@/jonas-santos.jpg.png";
 import niltonFerreira from "@/nilton-ferreira.jpg.png";
-import formasPagamento from "@/formas-pag.jpg.png";
+import segurancaArte from "@/formas-de-pag.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -269,6 +269,15 @@ function Index() {
         </div>
       </section>
 
+      {/* CTA directly below the parts catalog */}
+      <section className="bg-background px-4 py-8 md:py-12">
+        <div className="container mx-auto rounded-2xl border border-border bg-card px-5 py-7 text-center shadow-sm md:px-8 md:py-9">
+          <h2 className="text-2xl font-bold text-foreground md:text-3xl">Não achou a peça que procura?</h2>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground md:text-base">Fale com nossa equipe e informe o modelo e o ano do seu Hyundai.</p>
+          <a href={QUOTE} target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-xl bg-whatsapp px-7 py-3 text-sm font-bold text-white hover:bg-whatsapp-hover">Pedir orçamento no WhatsApp</a>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section id="gallery" className="bg-background py-8 md:py-16">
         <div className="container mx-auto px-4">
@@ -470,14 +479,21 @@ function Index() {
         </div>
       </section>
 
+      {/* Segurança da compra: banner antes do rodapé */}
+      <section id="compra-segura" className="bg-background px-4 py-8 md:py-14">
+        <div className="container mx-auto max-w-5xl">
+          <img
+            src={segurancaArte}
+            alt="Compre com segurança e tranquilidade. Peças originais, política de privacidade, pagamentos Mastercard, Visa, Elo e Pix, proteção LGPD e certificado SSL."
+            className="mx-auto block h-auto w-full object-contain"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contact" className="bg-transparent py-8 text-white md:py-10 lg:py-12">
         <div className="container mx-auto px-4">
-          <section className="border-b border-white/15 px-2 pb-8 text-center">
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Não achou a peça que procura?</h2>
-            <p className="mx-auto mt-2 max-w-xl text-sm text-white/70 md:text-base">Fale com nossa equipe e informe o modelo e o ano do seu Hyundai.</p>
-            <a href={QUOTE} target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center bg-whatsapp px-7 py-3 text-sm font-bold text-white hover:bg-whatsapp-hover">Pedir orçamento no WhatsApp</a>
-          </section>
           <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <h3 className="mb-3 text-lg font-bold md:text-xl">Solução Auto Parts Distribuidora</h3>
@@ -496,15 +512,6 @@ function Index() {
                 <li className="flex items-center gap-2"><FileText className="h-4 w-4" />CNPJ: 55.364.781/0001-95</li>
                 <li className="flex items-start gap-2"><MapPin className="mt-1 h-4 w-4" /><span>Rua Itaqueri, 641<br />Alto da Mooca, Sao Paulo - SP<br />03178-000</span></li>
               </ul>
-            </div>
-            <div>
-              <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Formas de pagamento</h4>
-              <img
-                src={formasPagamento}
-                alt="Compra 100% segura. Formas de pagamento: Mastercard, Visa, boleto bancário, Hipercard e Pix."
-                className="mx-auto block h-auto w-[70%] max-w-none object-contain"
-                loading="lazy"
-              />
             </div>
           </div>
           <div className="border-t border-white/15 pt-6 text-center">
