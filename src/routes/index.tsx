@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, Cog, Disc3, GitMerge,
+  ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Cog, Disc3, GitMerge,
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
