@@ -18,7 +18,7 @@ import parachoque from "@/parachoque.jpg.jpg";
 import retrovisor from "@/retrovisor.jpg.jpg";
 import jonasSantos from "@/jonas-santos.jpg.png";
 import niltonFerreira from "@/nilton-ferreira.jpg.png";
-import segurancaArte from "@/formas-de-pag.jpg";
+import segurancaArte from "@/formas-de-pag2.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
