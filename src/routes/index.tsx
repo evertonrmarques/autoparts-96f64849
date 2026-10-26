@@ -9,7 +9,6 @@ import hero from "@/hero-fachada1.jpg.jpg";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import delivery from "@/garantia-pecas.jpg.png";
-import warehouse from "@/assets/hyundai-warehouse-new.png";
 import lucas from "@/assets/lucas.png";
 import primeiraPeca from "@/primeira-peça.jpg.jpg";
 import lanterna from "@/lanterna.jpg.jpg";
@@ -82,10 +81,11 @@ const categories = [
   },
 ];
 const reasons = [
-  { icon: Shield, title: "Garantia de Qualidade", text: "Todas as peças com garantia e certificação de qualidade" },
-  { icon: Truck, title: "Entrega Nacional", text: "Entregamos para todo o Brasil com rapidez e segurança" },
-  { icon: Award, title: "Peças Hyundai", text: "Trabalhamos com peças originais, genuínas e compatíveis para diversos modelos Hyundai." },
-  { icon: Clock, title: "Atendimento Ágil", text: "Resposta rápida e atendimento personalizado" },
+  { icon: Award, title: "Peças Hyundai com procedência", text: "Trabalhamos com peças originais, genuínas e compatíveis para diversos modelos Hyundai." },
+  { icon: Car, title: "Compatibilidade orientada", text: "Informe o modelo, o ano e a versão do veículo para ajudarmos a localizar a peça adequada." },
+  { icon: Shield, title: "Compra com segurança", text: "Atendimento claro, nota fiscal e garantia conforme as condições de cada peça." },
+  { icon: Truck, title: "Envio para todo o Brasil", text: "Enviamos para diferentes regiões do país, com o prazo informado no orçamento." },
+  { icon: MessageCircle, title: "Atendimento especializado", text: "Tire suas dúvidas com nossa equipe antes de fechar o pedido." },
 ];
 const testimonials = [
   {
@@ -449,22 +449,19 @@ function Index() {
       </section>
 
       {/* Why us */}
-      <section className="why-choose-section relative isolate overflow-hidden bg-cover bg-center bg-no-repeat py-10 md:py-16" style={{ backgroundImage: `url(${warehouse})` }}>
-        <div className="absolute inset-0 z-0 bg-navy/85" />
-        <div aria-hidden="true" className="why-choose-fade why-choose-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" />
-        <div aria-hidden="true" className="why-choose-fade why-choose-fade-bottom pointer-events-none absolute inset-x-0 bottom-0 z-[1]" />
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="mb-12 text-center md:mb-16">
-            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Por que escolher a Solução Auto Parts?</h2>
-            <p className="mx-auto max-w-2xl px-2 text-lg text-white/80 md:text-xl">Confiança, qualidade e compromisso com a excelência no atendimento</p>
+      <section className="bg-muted py-10 md:py-16">
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="mb-8 text-center md:mb-10">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">Por que escolher a Solução Auto Parts?</h2>
+            <p className="mx-auto max-w-2xl px-2 text-base text-muted-foreground md:text-lg">Mais segurança para comprar, orientação para encontrar a peça certa e atendimento dedicado para seu Hyundai.</p>
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {reasons.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center bg-brand md:h-16 md:w-16"><Icon className="h-7 w-7 text-white md:h-8 md:w-8" /></div>
-                <h3 className="mb-2 text-lg font-semibold text-white md:text-xl">{title}</h3>
-                <p className="text-sm text-white/80 md:text-base">{text}</p>
-              </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+            {reasons.map(({ icon: Icon, title, text }, index) => (
+              <article key={title} className={`flex min-h-[190px] flex-col items-center justify-center rounded-xl border border-border bg-card px-5 py-6 text-center shadow-sm transition-shadow hover:shadow-md sm:min-h-[205px] sm:px-6 ${index === 4 ? "sm:col-span-2 sm:min-h-[150px]" : ""}`}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center text-brand md:h-11 md:w-11"><Icon className="h-8 w-8 md:h-9 md:w-9" strokeWidth={2.1} aria-hidden="true" /></div>
+                <h3 className="mb-2 text-base font-semibold leading-snug text-foreground md:text-lg">{title}</h3>
+                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">{text}</p>
+              </article>
             ))}
           </div>
         </div>
