@@ -269,15 +269,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA directly below the parts catalog */}
-      <section className="bg-background px-4 py-8 md:py-12">
-        <div className="container mx-auto rounded-2xl border border-border bg-card px-5 py-7 text-center shadow-sm md:px-8 md:py-9">
-          <h2 className="text-2xl font-bold text-foreground md:text-3xl">Não achou a peça que procura?</h2>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground md:text-base">Fale com nossa equipe e informe o modelo e o ano do seu Hyundai.</p>
-          <a href={QUOTE} target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-xl bg-whatsapp px-7 py-3 text-sm font-bold text-white hover:bg-whatsapp-hover">Pedir orçamento no WhatsApp</a>
-        </div>
-      </section>
-
       {/* Gallery */}
       <section id="gallery" className="bg-background py-8 md:py-16">
         <div className="container mx-auto px-4">
