@@ -19,6 +19,7 @@ import retrovisor from "@/retrovisor.jpg.jpg";
 import jonasSantos from "@/jonas-santos.jpg.png";
 import niltonFerreira from "@/nilton-ferreira.jpg.png";
 import segurancaArte from "@/formas-de-pag2.jpg.png";
+import bannerReclame from "@/banner-reclame.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -435,6 +436,18 @@ function Index() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Banner Reclame */}
+      <section aria-label="Banner Reclame" className="bg-muted px-4 py-5 md:py-8">
+        <div className="container mx-auto max-w-5xl">
+          <img
+            src={bannerReclame}
+            alt="Banner de divulgação da Solução Auto Parts"
+            className="mx-auto block h-auto w-full rounded-xl object-contain"
+            loading="lazy"
+          />
         </div>
       </section>
 
