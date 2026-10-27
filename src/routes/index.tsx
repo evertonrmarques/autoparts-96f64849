@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight, Award, Car, Check, ChevronDown, ChevronLeft, ChevronRight, Cog, Disc3, GitMerge,
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
+  Instagram, Facebook, Linkedin, Youtube, Music2,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
 import hero from "@/criativo-hero.jpg.png";
@@ -451,30 +452,70 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-transparent py-8 text-white md:py-10 lg:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
+      <footer id="contact" className="border-t border-white/10 bg-background py-8 text-foreground md:py-10 lg:py-12">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 gap-8 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             <div>
-              <h3 className="mb-3 text-lg font-bold md:text-xl">Solução Auto Parts Distribuidora</h3>
-              <p className="text-sm text-white/70 md:text-base">Especializada em peças Hyundai com envio imediato para todo o Brasil.</p>
+              <h3 className="mb-4 text-base font-medium text-foreground md:text-lg">Loja</h3>
+              <nav aria-label="Links da loja" className="flex flex-col items-start gap-3 text-sm text-muted-foreground md:text-base">
+                <a href="#catalog" className="transition-colors hover:text-foreground">Comprar</a>
+                <a href="#catalog" className="transition-colors hover:text-foreground">Catálogo de peças</a>
+                <a href="#gallery" className="transition-colors hover:text-foreground">Galeria</a>
+                <a href="#testimonials" className="transition-colors hover:text-foreground">Avaliações</a>
+                <a href="#guarantee" className="transition-colors hover:text-foreground">Garantia</a>
+              </nav>
             </div>
+
             <div>
-              <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Contato</h4>
-              <ul className="space-y-2 text-sm text-white/70 md:text-base">
-                <li className="flex items-center gap-2"><Phone className="h-4 w-4" /><a href={QUOTE} className="hover:text-white">+55 11 95270-9818</a></li>
-                <li className="flex items-center gap-2"><Mail className="h-4 w-4" /><a href="mailto:solucaoautoparts@gmail.com" className="hover:text-white">solucaoautoparts@gmail.com</a></li>
+              <h3 className="mb-4 text-base font-medium text-foreground md:text-lg">Atendimento</h3>
+              <ul className="flex flex-col gap-3 text-sm text-muted-foreground md:text-base">
+                <li>
+                  <a href={QUOTE} target="_blank" rel="noreferrer" className="flex items-center gap-2.5 transition-colors hover:text-foreground">
+                    <MessageCircle className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    <span>+55 11 95270-9818</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:solucaoautoparts@gmail.com" className="flex items-center gap-2.5 transition-colors hover:text-foreground">
+                    <Mail className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    <span className="break-all">solucaoautoparts@gmail.com</span>
+                  </a>
+                </li>
               </ul>
             </div>
+
             <div>
-              <h4 className="mb-3 text-base font-semibold md:mb-4 md:text-lg">Informações</h4>
-              <ul className="space-y-2 text-sm text-white/70 md:text-base">
-                <li className="flex items-center gap-2"><FileText className="h-4 w-4" />CNPJ: 55.364.781/0001-95</li>
-                <li className="flex items-start gap-2"><MapPin className="mt-1 h-4 w-4" /><span>Rua Itaqueri, 641<br />Alto da Mooca, Sao Paulo - SP<br />03178-000</span></li>
-              </ul>
+              <h3 className="mb-4 text-base font-medium text-foreground md:text-lg">Informações</h3>
+              <nav aria-label="Informações do site" className="flex flex-col items-start gap-3 text-sm text-muted-foreground md:text-base">
+                <a href="#about" className="transition-colors hover:text-foreground">Sobre nós</a>
+                <a href="#guarantee" className="transition-colors hover:text-foreground">Nota fiscal e garantia</a>
+                <a href="#gallery" className="transition-colors hover:text-foreground">Envios e entregas</a>
+                <a href="#compra-segura" className="transition-colors hover:text-foreground">Compra segura e privacidade</a>
+                <a href="#contact" className="transition-colors hover:text-foreground">Contato</a>
+              </nav>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-base font-medium text-foreground md:text-lg">Mais</h3>
+              <div className="flex flex-col gap-3 text-sm text-muted-foreground md:text-base" aria-label="Redes sociais ainda não vinculadas">
+                <span className="flex items-center gap-2.5" title="Perfil oficial ainda não configurado"><Instagram className="h-6 w-6 shrink-0" aria-hidden="true" />Instagram</span>
+                <span className="flex items-center gap-2.5" title="Perfil oficial ainda não configurado"><Facebook className="h-6 w-6 shrink-0" aria-hidden="true" />Facebook</span>
+                <span className="flex items-center gap-2.5" title="Perfil oficial ainda não configurado"><Linkedin className="h-6 w-6 shrink-0" aria-hidden="true" />LinkedIn</span>
+                <span className="flex items-center gap-2.5" title="Canal oficial ainda não configurado"><Youtube className="h-6 w-6 shrink-0" aria-hidden="true" />YouTube</span>
+                <span className="flex items-center gap-2.5" title="Perfil oficial ainda não configurado"><Music2 className="h-6 w-6 shrink-0" aria-hidden="true" />TikTok</span>
+              </div>
             </div>
           </div>
-          <div className="border-t border-white/15 pt-6 text-center">
-            <p className="text-sm text-white/70 md:text-base">© 2026 Solução Auto Parts Distribuidora. Todos os direitos reservados.</p>
+
+          <div className="mt-3 rounded-md bg-card px-4 py-4 text-center text-sm text-muted-foreground md:px-6">
+            <p className="font-medium text-foreground">Solução Auto Parts Distribuidora de Motores e Peças Automotivas Ltda.</p>
+            <p className="mt-1">CNPJ: 55.364.781/0001-95</p>
+            <p className="mt-1">Endereço: Rua Itaqueri, 641 — Alto da Mooca, São Paulo - SP, 03178-000</p>
+            <p className="mt-1">© 2026 Solução Auto Parts Distribuidora. Todos os direitos reservados.</p>
+          </div>
+
+          <div className="mt-4 rounded-md bg-card px-4 py-4 text-center text-sm leading-relaxed text-muted-foreground md:px-6">
+            Atenção: confirme com nossa equipe a aplicação da peça, as condições de pagamento e o prazo de entrega antes de concluir seu pedido.
           </div>
         </div>
       </footer>
