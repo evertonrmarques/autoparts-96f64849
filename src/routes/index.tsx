@@ -6,7 +6,7 @@ import {
   Instagram, Facebook, Linkedin, Youtube, Music2,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
-import hero from "@/criativo-hero.jpg.png";
+import hero from "@/hero-nova.jpg.png";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import delivery from "@/garantia-pecas.jpg.png";
