@@ -168,14 +168,14 @@ function Index() {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }} />
         <div className="hero-bottom-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[18%]" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/10 via-transparent to-navy/20" />
-        <div className="absolute right-[3%] top-[31%] z-10 w-[59%] max-w-[520px] md:right-[3.5%] md:top-[17%] md:w-[58%] lg:top-[12%]">
+        <div className="absolute right-[3%] top-[36%] z-10 w-[59%] max-w-[520px] md:right-[3.5%] md:top-[25%] md:w-[58%] lg:top-[20%]">
           <div className="flex flex-col items-stretch gap-2 sm:gap-2.5 lg:flex-row lg:justify-end">
             <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg border border-whatsapp/70 bg-whatsapp px-2.5 py-2 text-[11px] font-bold leading-tight text-white shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
               <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span className="text-center">Pedir orçamento no WhatsApp</span>
             </a>
-            <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg border border-sky-400 bg-navy/90 px-2.5 py-2 text-[11px] font-bold leading-tight text-white shadow-[0_0_18px_rgba(0,160,255,0.22)] transition-colors hover:bg-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
-              <Zap className="h-4 w-4 shrink-0 text-sky-300" aria-hidden="true" />
+            <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg border border-amber-500 bg-amber-400 px-2.5 py-2 text-[11px] font-bold leading-tight text-navy shadow-lg transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
+              <Zap className="h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
               <span className="text-center">Quer entrega imediata? Fale agora</span>
             </a>
           </div>
@@ -185,7 +185,7 @@ function Index() {
               { label: "Garantia", Icon: Check },
               { label: "Envio imediato", Icon: Zap },
             ].map(({ label, Icon }) => (
-              <span key={label} className="inline-flex items-center gap-1 whitespace-nowrap"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Envio imediato" ? "text-sky-300" : "text-whatsapp"}`} />{label}</span>
+              <span key={label} className="inline-flex items-center gap-1 whitespace-nowrap"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Envio imediato" ? "text-amber-300" : "text-whatsapp"}`} />{label}</span>
             ))}
           </div>
         </div>
