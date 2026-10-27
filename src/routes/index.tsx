@@ -5,7 +5,7 @@ import {
   Mail, MapPin, Menu, MessageCircle, Phone, Shield, Thermometer, Truck, X, Zap, FileText,
 } from "lucide-react";
 import logo from "@/assets/solucao-auto-parts-logo.webp";
-import hero from "@/hero-fachada1.jpg.jpg";
+import hero from "@/criativo-hero.jpg.png";
 import categorias from "@/assets/categorias.png";
 import workbench from "@/galeria-pecas.jpg.png";
 import delivery from "@/garantia-pecas.jpg.png";
@@ -164,53 +164,29 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[88svh] overflow-hidden md:min-h-[600px] lg:min-h-[680px]">
-        <div className="absolute inset-0 bg-navy" />
+      <section className="relative min-h-[88svh] overflow-hidden bg-navy md:min-h-[600px] lg:min-h-[680px]">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }} />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/70 to-brand/50" />
-        <div className="hero-bottom-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[46%]" />
-        <div className="relative z-10 mx-auto flex min-h-[88svh] w-full max-w-6xl items-start px-5 pb-8 pt-[6.75rem] sm:pb-10 sm:pt-28 md:min-h-[600px] md:items-center md:px-10 md:pb-12 md:pt-28 lg:min-h-[680px]">
-          <div className="max-w-2xl -translate-y-[10svh] md:translate-y-0">
-            <p className="mb-3 max-w-xl text-xs font-semibold leading-[1.45] tracking-[-0.01em] text-white/90 sm:text-sm md:text-base">Especializada em peças Hyundai com envio imediato para todo o Brasil.</p>
-            <h1 className="mb-3 text-balance text-[1.9rem] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:mb-4 sm:text-4xl sm:tracking-tight md:text-6xl">Peças Hyundai com nota fiscal e envio para todo o Brasil</h1>
-            <p className="mb-4 max-w-xl text-[15px] leading-[1.55] text-white/90 sm:mb-5 sm:text-base sm:leading-relaxed md:text-xl">Diga o modelo e a peça que você precisa. Respondemos no WhatsApp com preço e prazo de entrega.</p>
-            <div className="mb-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-stretch">
-              <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-whatsapp px-4 py-3 text-sm font-bold leading-tight text-white shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy md:px-5 md:text-base">
-                <span className="flex w-full items-center justify-center gap-2">
-                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-                  <span className="text-center">Pedir orçamento no WhatsApp</span>
-                </span>
-              </a>
-              <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-amber-500 bg-amber-400 px-4 py-2.5 text-sm font-bold text-navy shadow-lg transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:min-w-[250px]">
-                <span className="flex w-full items-center justify-center gap-2">
-                  <Zap className="h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
-                  <span className="flex flex-col items-center text-center leading-tight">
-                    <span>Quer entrega imediata?</span>
-                    <span className="mt-0.5 underline decoration-2 underline-offset-2">Clique aqui e fale agora!</span>
-                  </span>
-                </span>
-              </a>
-            </div>
-            <div className="mb-3 flex items-center gap-2 text-xs font-semibold leading-5 text-white/95 sm:mb-2 sm:text-sm">
-              <Phone className="h-4 w-4 shrink-0 text-white/90" />
-              <a href="tel:+5511952709818" className="underline decoration-white/50 underline-offset-4 transition-colors hover:text-amber-300">(11) 95270-9818</a>
-            </div>
-            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 text-[11px] font-medium leading-5 text-white/90 sm:mt-3 sm:gap-x-4 sm:gap-y-2 sm:text-xs md:text-sm">
-              {[
-                { label: "Nota fiscal", Icon: Check },
-                { label: "Garantia", Icon: Check },
-                { label: "Envio imediato!", Icon: Zap },
-              ].map(({ label, Icon }) => (
-                <span key={label} className="inline-flex items-center gap-1"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Envio imediato!" ? "text-amber-300" : "text-whatsapp"} sm:h-4 sm:w-4`} />{label}</span>
-              ))}
-            </div>
-            <p className="mb-2 mt-4 text-xs font-semibold leading-5 text-white sm:mt-5 sm:text-sm">Peças em estoque para os principais modelos Hyundai:</p>
-            <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
-              {heroModels.map((m) => (
-                <a key={m} href={wa(`Olá! Gostaria de falar com o setor de peças e solicitar uma cotação para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium leading-4 text-white/90 transition-colors hover:bg-white/15 sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
-              ))}
-            </div>
-
+        <div className="hero-bottom-fade pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[18%]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/10 via-transparent to-navy/20" />
+        <div className="absolute right-[3%] top-[31%] z-10 w-[59%] max-w-[520px] md:right-[3.5%] md:top-[17%] md:w-[58%] lg:top-[6%]">
+          <div className="flex flex-col items-stretch gap-2 sm:gap-2.5 lg:flex-row lg:justify-end">
+            <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg border border-whatsapp/70 bg-whatsapp px-2.5 py-2 text-[11px] font-bold leading-tight text-white shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
+              <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span className="text-center">Pedir orçamento no WhatsApp</span>
+            </a>
+            <a href={wa("Olá! Gostaria de falar com o setor de peças e solicitar uma cotação sobre entrega hoje.")} target="_blank" rel="noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-lg border border-sky-400 bg-navy/90 px-2.5 py-2 text-[11px] font-bold leading-tight text-white shadow-[0_0_18px_rgba(0,160,255,0.22)] transition-colors hover:bg-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
+              <Zap className="h-4 w-4 shrink-0 text-sky-300" aria-hidden="true" />
+              <span className="text-center">Quer entrega imediata? Fale agora</span>
+            </a>
+          </div>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10px] font-semibold text-white drop-shadow-md sm:justify-end sm:text-[11px] lg:mt-2.5">
+            {[
+              { label: "Nota fiscal", Icon: Check },
+              { label: "Garantia", Icon: Check },
+              { label: "Envio imediato", Icon: Zap },
+            ].map(({ label, Icon }) => (
+              <span key={label} className="inline-flex items-center gap-1 whitespace-nowrap"><Icon className={`h-3.5 w-3.5 flex-shrink-0 ${label === "Envio imediato" ? "text-sky-300" : "text-whatsapp"}`} />{label}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -221,6 +197,12 @@ function Index() {
           <div className="mb-8 text-center md:mb-12">
             <h2 className="mb-3 text-2xl font-bold tracking-tight md:mb-4 md:text-4xl">Catálogo de Peças Hyundai</h2>
             <p className="mx-auto max-w-2xl px-2 text-base leading-relaxed text-muted-foreground md:text-xl">Escolha uma categoria abaixo ou fale com nossa equipe para encontrar a peça ideal para o seu Hyundai.</p>
+            <p className="mt-5 text-xs font-semibold leading-5 text-foreground md:text-sm">Peças em estoque para os principais modelos Hyundai:</p>
+            <div className="mx-auto mt-3 flex max-w-4xl flex-wrap justify-center gap-1.5 sm:gap-2">
+              {heroModels.map((m) => (
+                <a key={m} href={wa(`Olá! Gostaria de falar com o setor de peças e solicitar uma cotação para meu ${m}.`)} target="_blank" rel="noreferrer" className="rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium leading-4 text-foreground transition-colors hover:border-brand hover:text-brand sm:px-3 sm:py-1.5 sm:text-xs">{m}</a>
+              ))}
+            </div>
           </div>
           <div className="mb-9 grid grid-cols-1 gap-3 sm:gap-4 md:mb-12 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
             {categories.map(({ name, icon: Icon, description, items }, index) => {
