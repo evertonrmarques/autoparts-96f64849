@@ -165,7 +165,7 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[88svh] overflow-hidden bg-navy md:min-h-[600px] lg:min-h-[680px]">
+      <section className="relative min-h-[72svh] overflow-hidden bg-navy md:min-h-[600px] lg:min-h-[680px]">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }} />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/10 via-transparent to-navy/20" />
         <div className="absolute right-[3%] top-[36%] z-10 w-[59%] max-w-[520px] md:right-[3.5%] md:top-[25%] md:w-[58%] lg:top-[20%]">
