@@ -247,17 +247,6 @@ footer {
   background: transparent;
 }
 
-/* Smoothly blend the hero background into the dark catalog section. */
-.hero-bottom-fade {
-  background: linear-gradient(
-    to bottom,
-    oklch(0.16 0.03 255 / 0) 0%,
-    oklch(0.16 0.03 255 / 0.55) 38%,
-    oklch(0.16 0.02 260 / 0.94) 78%,
-    oklch(0.16 0.02 260) 100%
-  );
-}
-
 /* Matching dark-blue fades at both edges of the "Why choose us" image. */
 .why-choose-fade {
   height: clamp(5rem, 12vw, 10rem);
