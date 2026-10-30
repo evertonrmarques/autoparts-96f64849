@@ -169,7 +169,7 @@ function Index() {
       <section className="relative aspect-[1122/1402] w-full overflow-hidden bg-navy md:aspect-auto md:min-h-[600px] lg:min-h-[680px]">
         <div className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat md:bg-cover" style={{ backgroundImage: `url(${hero})` }} />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/10 via-transparent to-navy/20" />
-        <div className="absolute right-[3%] top-[29%] z-10 w-[40%] max-w-[520px] md:right-[3.5%] md:top-[25%] md:w-[58%] lg:top-[20%]">
+        <div className="absolute right-[5%] top-[32%] z-10 w-[40%] max-w-[520px] md:right-[3.5%] md:top-[25%] md:w-[58%] lg:top-[20%]">
           <div className="flex flex-col items-stretch gap-2 sm:gap-2.5 lg:flex-row lg:justify-end">
             <a href={QUOTE} target="_blank" rel="noreferrer" className="inline-flex min-h-8 items-center justify-center gap-1 rounded-lg border border-whatsapp/70 bg-whatsapp px-2 py-1.5 text-[10px] font-bold leading-tight text-white sm:min-h-9 sm:gap-1.5 sm:px-2.5 sm:py-2 sm:text-[11px] shadow-lg transition-colors hover:bg-whatsapp-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-navy lg:min-h-10 lg:px-3 lg:text-xs">
               <MessageCircle className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" aria-hidden="true" />
